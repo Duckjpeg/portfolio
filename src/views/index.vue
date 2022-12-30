@@ -17,6 +17,7 @@
 			</div>-->
 			<div id="cards">
 				<div class="card">
+					<router-link class="bigNavLink" to="/"></router-link>
 					<div class="cardBorder"></div>
 					<div class="cardContent">
 						<div class="cardImgWrapper">
@@ -29,6 +30,7 @@
 					</div>
 				</div>
 				<div class="card">
+					<router-link class="bigNavLink" to="#about"></router-link>
 					<div class="cardBorder"></div>
 					<div class="cardContent">
 						<div class="cardImgWrapper">
@@ -41,6 +43,7 @@
 					</div>
 				</div>
 				<div class="card">
+					<router-link class="bigNavLink" to="#projects"></router-link>
 					<div class="cardBorder"></div>
 					<div class="cardContent">
 						<div class="cardImgWrapper">
@@ -56,6 +59,7 @@
 					</div>
 				</div>
 				<div class="card">
+					<router-link class="bigNavLink" to="#contact"></router-link>
 					<div class="cardBorder"></div>
 					<div class="cardContent">
 						<div class="cardImgWrapper">
@@ -192,16 +196,20 @@ export default {
 	color: var(--mainFontColor);
 }
 
-/*For Nav bar at start from hyperplexed*/
+/*Nav */
+/*Nav */
+/*Nav */
 .navBar {
 	position: relative;
 	right: 16px;
 }
+/*cards */
+/*For Nav bar at start from hyperplexed*/
 #cards {
 	display: inline-grid;
 	width: 95vw;
 	width: 95dvw;
-	gap: 8px;
+	gap: 1vw;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1fr;
 	padding: 2.5vw;
@@ -209,6 +217,7 @@ export default {
 #cards:hover > .card > .cardBorder {
 	opacity: 1; /*on hover they all set to clear and set to the coordinate */
 	/*for some reason it doesn't overflow the box */
+	/*doesnt overflow because its a background not its own element numb nuts */
 }
 .card {
 	aspect-ratio: 5/4; /*makes square */
@@ -216,6 +225,9 @@ export default {
 	border-radius: 0.75vw;
 	cursor: pointer;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .card::before {
 	/*acting on top layer */
@@ -262,6 +274,14 @@ export default {
 	margin: 0.2vw;
 	border-radius: inherit;
 	z-index: 2;
+}
+/*end of cards */
+
+.bigNavLink{
+	width:100%;
+	height:100%;
+	position: absolute;
+	z-index:4;
 }
 
 .cardImgWrapper > .cardImg {
