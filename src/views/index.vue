@@ -201,7 +201,9 @@ export default {
 /*Nav */
 .navBar {
 	position: relative;
-	right: 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 /*cards */
 /*For Nav bar at start from hyperplexed*/
@@ -228,6 +230,7 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	max-width: 350px;
 }
 .card::before {
 	/*acting on top layer */
@@ -285,11 +288,13 @@ export default {
 }
 
 .cardImgWrapper > .cardImg {
-	width: 150px;
-	height: 150px;
+	width: 11vw;
+	height: 11vw;
+	max-width: 200px;
+	max-height: 200px;
 }
 .cardImgWrapper {
-	filter: invert(92%);
+	filter: invert(92%); /*pretty much same as title color */
 }
 .infoTitle {
 	font-family: var(--titleFont);
@@ -326,6 +331,17 @@ export default {
 	}
 	.sizeWarn {
 		display: flex;
+	}
+}
+/*for really big screens */
+@media screen and (min-width: 1500px) {
+	#cards{
+		padding: 50px;
+		display: flex;
+		justify-content: space-between;
+	}
+	#cards > .card{
+		width:350px;
 	}
 }
 </style>
