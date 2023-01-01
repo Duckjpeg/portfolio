@@ -39,7 +39,10 @@ export default {
 			card.onmousemove = (event) => this.handleOnMouseMove(event);
 		}
 		//TODO: sort on scroll title shrinks to top left and when 3/4 through small nav bar fades in
-		//so like font size (OG) - scroll height then when scroll height is big enough it doesnt't subract more
+		//figure out how to make scrollY stay const depending on screen width
+		//above 1000px width 350px down is stop
+		//500w : 100px;
+		//
 		window.addEventListener("scroll", this.handleOnScroll);
 	},
 	unmounted() {
@@ -93,7 +96,6 @@ body {
 	color: var(--mainFontColor);
 	position: relative;
 	font-size: calc(14vw - var(--scrollY));
-	top: -5px;
 	left: 5vw;
 }
 .titleWrapper {
@@ -107,7 +109,7 @@ body {
 	left: 0;
 	width: 100vw;
 	width: 100dvw;
-	height: calc(21.5vw - var(--scrollY)*1.5);
+	height: calc(21.5vw - var(--scrollY) * 1.5);
 	background: linear-gradient(
 		180deg,
 		rgba(20 20 20 / 1) 0%,
@@ -181,16 +183,49 @@ body {
 	}
 	.titleContainer {
 		padding: 10px 0 0 20px;
-		height: calc(215px - var(--scrollY)*1.5);
+		height: calc(215px - var(--scrollY) * 1.5);
+	}
+}
+@media screen and (max-width: 500px) {
+	.titleContainer {
+		left: 3.5vw;
+		height: 21.5vw; /*doesn't shrink since at that scale theres no point */
+	}
+	.slash {
+		top:6px;
+		height: 15vw;
+	}
+	.mainTitle {
+		position: relative;
+		font-size: 11.5vw;
+		top:6px;
+	}
+	.surnameTitle {
+		font-size: 3vw;
+		top: -3.5vw;
+		letter-spacing: 5.1vw;
+		top:-2.5vw;
+	}
+	.afterSlash {
+		font-size: 14vw;
+		top:6px;
 	}
 }
 /*for really small width screens */
 @media screen and (max-width: 300px) {
 	.titleContainer {
-		padding: 30px 0 0 2px;
+		padding: 5px 0 0 5px;
+	}
+	.titleContainer > .titleWrapper > .afterSlash {
+		position: relative;
+		top: 4px;
 	}
 	.sizeWarn {
-		display: flex;
+		display: none;
+	}
+	.surnameTitle {
+		position: relative;
+		top: -2vw;
 	}
 }
 </style>
