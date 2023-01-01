@@ -61,10 +61,14 @@ export default {
 		},
 		handleOnScroll() {
 			this.scrollY = window.pageYOffset;
-			document.documentElement.style.setProperty(
-				"--scrollY",
-				`${this.scrollY / 5}px`
-			);
+			if (this.scrollY <= 350) {
+				document.documentElement.style.setProperty(
+					"--scrollY",
+					`${this.scrollY / 5}px`
+				);
+			} else {
+				this.scrollY = 350;
+			}
 			//document.querySelector(".slash").style.width = calc();
 			//need to adjust title wrapper background size using multiplier of scroll height
 			console.log(this.scrollY);
@@ -171,6 +175,7 @@ body {
 		position: relative;
 		left: 50px;
 		font-size: calc(150px - var(--scrollY));
+		top:-6px;
 	}
 	.titleContainer {
 		padding: 20px 0 0 20px;
@@ -192,23 +197,23 @@ body {
 		height: 21.5vw; /*doesn't shrink since at that scale theres no point */
 	}
 	.slash {
-		top:6px;
+		top: 6px;
 		height: 15vw;
 	}
 	.mainTitle {
 		position: relative;
 		font-size: 11.5vw;
-		top:6px;
+		top: 6px;
 	}
 	.surnameTitle {
 		font-size: 3vw;
 		top: -3.5vw;
 		letter-spacing: 5.1vw;
-		top:-2.5vw;
+		top: -2.5vw;
 	}
 	.afterSlash {
 		font-size: 14vw;
-		top:6px;
+		top: 6px;
 	}
 }
 /*for really small width screens */
