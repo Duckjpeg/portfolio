@@ -1,10 +1,11 @@
 <template>
 	<main>
-		<div class="sizeWarn">
-			This website may have some problems due to your screen width
-		</div>
-		<nav class="navBar">
-			<!--
+		<header>
+			<div class="sizeWarn">
+				This website may have some problems due to your screen width
+			</div>
+			<nav class="navBar">
+				<!--
 			<div class="navWrapper">
 				<router-link to="#start" class="navLinks">stARt</router-link>
 				<router-link to="#about" class="navLinks">About</router-link>
@@ -15,72 +16,97 @@
 					>coNtAct</router-link
 				>
 			</div>-->
-			<div id="cards">
-				<div class="card">
-					<router-link class="bigNavLink" to="/"></router-link>
-					<div class="cardBorder"></div>
-					<div class="cardContent">
-						<div class="cardImgWrapper">
-							<img src="/house.png" alt="" class="home cardImg" />
+				<div id="cards">
+					<div class="card">
+						<router-link class="bigNavLink" to="/"></router-link>
+						<div class="cardBorder"></div>
+						<div class="cardContent">
+							<div class="cardImgWrapper">
+								<img
+									src="/house.png"
+									alt=""
+									class="home cardImg"
+								/>
+							</div>
+							<div class="infoWrapper">
+								<div class="infoTitle">Home</div>
+								<div class="infoDescription"></div>
+							</div>
 						</div>
-						<div class="infoWrapper">
-							<div class="infoTitle">Home</div>
-							<div class="infoDescription"></div>
+					</div>
+					<div class="card">
+						<router-link
+							class="bigNavLink"
+							to="#about"
+						></router-link>
+						<div class="cardBorder"></div>
+						<div class="cardContent">
+							<div class="cardImgWrapper">
+								<img src="/info.png" class="about cardImg" />
+							</div>
+							<div class="infoWrapper">
+								<div class="infoTitle">About</div>
+								<div class="infoDescription"></div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<router-link
+							class="bigNavLink"
+							to="#projects"
+						></router-link>
+						<div class="cardBorder"></div>
+						<div class="cardContent">
+							<div class="cardImgWrapper">
+								<img
+									src="/blueprint.png"
+									class="projects cardImg"
+								/>
+							</div>
+							<div class="infoWrapper">
+								<div class="infoTitle">pRojects</div>
+								<div class="infoDescription"></div>
+							</div>
+						</div>
+					</div>
+					<div class="card">
+						<router-link
+							class="bigNavLink"
+							to="#contact"
+						></router-link>
+						<div class="cardBorder"></div>
+						<div class="cardContent">
+							<div class="cardImgWrapper">
+								<img
+									src="/contact.png"
+									class="contact cardImg"
+								/>
+							</div>
+							<div class="infoWrapper">
+								<div class="infoTitle">contAct</div>
+								<div class="infoDescription"></div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="card">
-					<router-link class="bigNavLink" to="#about"></router-link>
-					<div class="cardBorder"></div>
-					<div class="cardContent">
-						<div class="cardImgWrapper">
-							<img src="/info.png" class="about cardImg" />
-						</div>
-						<div class="infoWrapper">
-							<div class="infoTitle">About</div>
-							<div class="infoDescription"></div>
-						</div>
-					</div>
+			</nav>
+			<div class="titleContainer">
+				<div class="titleWrapper">
+					<span class="mainTitle">HARRy</span>
+					<div class="slash"></div>
+					<span class="afterSlash">{{ year }}</span>
 				</div>
-				<div class="card">
-					<router-link class="bigNavLink" to="#projects"></router-link>
-					<div class="cardBorder"></div>
-					<div class="cardContent">
-						<div class="cardImgWrapper">
-							<img
-								src="/blueprint.png"
-								class="projects cardImg"
-							/>
-						</div>
-						<div class="infoWrapper">
-							<div class="infoTitle">pRojects</div>
-							<div class="infoDescription"></div>
-						</div>
-					</div>
-				</div>
-				<div class="card">
-					<router-link class="bigNavLink" to="#contact"></router-link>
-					<div class="cardBorder"></div>
-					<div class="cardContent">
-						<div class="cardImgWrapper">
-							<img src="/contact.png" class="contact cardImg" />
-						</div>
-						<div class="infoWrapper">
-							<div class="infoTitle">contAct</div>
-							<div class="infoDescription"></div>
-						</div>
-					</div>
-				</div>
+				<span class="surnameTitle">steVen</span>
 			</div>
-		</nav>
-		<div class="titleContainer">
-			<div class="titleWrapper">
-				<span class="mainTitle">HARRy</span>
-				<div class="slash"></div>
-				<span class="afterSlash">{{ year }}</span>
+		</header>
+		<body>
+			<div class="subTitle" style="font-size: 200px">
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Recusandae numquam, vel obcaecati, nobis perspiciatis velit, a
+				distinctio dicta hic reprehenderit tempore. Ratione, voluptate!
+				Quam ea nulla vitae fuga porro eaque!
 			</div>
-			<span class="surnameTitle">steVen</span>
-		</div>
+		</body>
 	</main>
 </template>
 <script>
@@ -90,6 +116,7 @@ export default {
 			year: 2022,
 			navX: 0,
 			navY: 0,
+			scrollY: 0,
 		};
 	},
 	mounted() {
@@ -97,50 +124,61 @@ export default {
 		for (const card of document.querySelectorAll(".card")) {
 			card.onmousemove = (event) => this.handleOnMouseMove(event);
 		}
-		document.getElementById("cards").onmousemove = (event) =>
-			this.neighBourHighlight(event);
+		//TODO: sort on scroll title shrinks to top left and when 3/4 through small nav bar fades in
+		//so like font size (OG) - scroll height then when scroll height is big enough it doesnt't subract more
+		window.addEventListener("scroll", this.handleOnScroll);
 	},
 	unmounted() {
 		document.removeEventListener(card.onmousemove);
-		document.removeEventListener(
-			document.getElementById("cards").onmousemove
-		);
+		window.removeEventListener("scroll", this.handleOnScroll);
 	},
 	methods: {
 		handleOnMouseMove(event) {
 			for (const card of document.querySelectorAll(".card")) {
 				const rect = card.getBoundingClientRect(); //gets info on rectangle
 				this.navX = event.clientX - rect.left; //make x and Y relative to the card
-				this.navY = event.clientY - rect.top; //its like imagine it was outside the box 
-
+				this.navY = event.clientY - rect.top; //its like imagine it was outside the box
 				card.style.setProperty("--mouse-x", `${this.navX}px`); //sets it for css
 				card.style.setProperty("--mouse-y", `${this.navY}px`);
 			}
+		},
+		handleOnScroll() {
+			this.scrollY = window.pageYOffset;
+			document.documentElement.style.setProperty(
+				"--scrollY",
+				`${this.scrollY / 5}px`
+			);
+			//document.querySelector(".slash").style.width = calc();
+			//need to adjust title wrapper background size using multiplier of scroll height
+			console.log(this.scrollY);
 		},
 	},
 };
 </script>
 <style>
+body {
+	padding-top: 20px;
+}
 /*Title */
 .mainTitle {
 	font-family: var(--titleFont);
-	font-size: 11.5vw;
+	font-size: calc(11.5vw - var(--scrollY));
 	color: var(--mainFontColor);
 }
 .surnameTitle {
 	font-family: var(--titleFont);
-	font-size: 3vw;
+	font-size: calc(3vw - var(--scrollY) / 5);
 	color: var(--smallTextColor);
 	position: relative;
 	left: 0.5vw;
-	top: -3.5vw;
-	letter-spacing: 5.1vw;
+	top: calc(-3.5vw + var(--scrollY) / 200);
+	letter-spacing: calc(5.1vw - var(--scrollY) * 0.5);
 }
 .afterSlash {
 	font-family: var(--titleFont);
 	color: var(--mainFontColor);
 	position: relative;
-	font-size: 14.5vw;
+	font-size: calc(14vw - var(--scrollY));
 	top: -5px;
 	left: 5vw;
 }
@@ -150,10 +188,26 @@ export default {
 }
 .titleContainer {
 	padding: 2vw 0 0 2vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	width: 100dvw;
+	height: calc(21.5vw - var(--scrollY) * 3.3);
+	max-height: 210px;
+	background: linear-gradient(
+		180deg,
+		rgba(20 20 20 / 1) 0%,
+		rgba(20 20 20 / 0.9) 65%,
+		rgba(20 20 20 / 0.75) 78%,
+		rgba(20 20 20 / 0.5) 90%,
+		rgba(20, 20, 20, 0.3) 95%,
+		rgba(0, 0, 0, 0) 100%
+	);
 }
 .slash {
-	width: 1%;
-	height: 15vw;
+	width: 1vw;
+	height: calc(15vw - var(--scrollY));
 	max-width: 10px;
 	max-height: 150px;
 	background: linear-gradient(
@@ -165,20 +219,8 @@ export default {
 		rgba(20 20 20 /0)
 	);
 	position: relative;
-	top: -5px;
 	left: 3.5vw;
 	transform: skew(-30deg);
-}
-
-/*nav items */
-.navLinks {
-	text-decoration: none;
-	font-family: var(--titleFont);
-	color: var(--mainFontColor);
-}
-.navWrapper {
-	display: flex;
-	flex-direction: column;
 }
 
 /*warning banner for screen size */
@@ -208,7 +250,8 @@ export default {
 /*cards */
 /*For Nav bar at start from hyperplexed*/
 #cards {
-	display: inline-grid;
+	/*display: inline-grid;*/
+	display: none;
 	width: 95vw;
 	width: 95dvw;
 	gap: 1vw;
@@ -280,11 +323,11 @@ export default {
 }
 /*end of cards */
 
-.bigNavLink{
-	width:100%;
-	height:100%;
+.bigNavLink {
+	width: 100%;
+	height: 100%;
 	position: absolute;
-	z-index:4;
+	z-index: 4;
 }
 
 .cardImgWrapper > .cardImg {
@@ -299,29 +342,31 @@ export default {
 .infoTitle {
 	font-family: var(--titleFont);
 	color: var(--mainFontColor);
+	font-size: 3vw;
 }
 
-/*max font stuff */
+/*max font stuff (above 1000px) */
 @media screen and (min-width: 1000px) {
 	.mainTitle {
-		font-size: 120px;
+		font-size: calc(120px - var(--scrollY) * 0.9);
 	}
 	.slash {
 		left: 35px;
+		height: calc(150px - var(--scrollY));
 	}
 	.afterSlash {
 		position: relative;
 		left: 50px;
-		font-size: 150px;
+		font-size: calc(150px - var(--scrollY));
 	}
 	.titleContainer {
 		padding: 20px 0 0 20px;
 	}
 	.surnameTitle {
-		font-size: 30px;
+		font-size: calc(30px - var(--scrollY) / 5);
 		left: 5px;
-		top: -35px;
-		letter-spacing: 55px;
+		top: calc(-35px + var(--scrollY) / 10);
+		letter-spacing: calc(55px - var(--scrollY) / 2.25);
 	}
 }
 /*for really small width screens */
@@ -335,13 +380,17 @@ export default {
 }
 /*for really big screens */
 @media screen and (min-width: 1500px) {
-	#cards{
+	#cards {
 		padding: 50px;
 		display: flex;
+		display: none; /*until I find where to put them */
 		justify-content: space-between;
 	}
-	#cards > .card{
-		width:350px;
+	#cards > .card {
+		width: 350px;
+	}
+	.infoTitle {
+		font-size: 45px;
 	}
 }
 </style>
