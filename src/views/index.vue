@@ -1,6 +1,7 @@
 <template>
 	<main>
 		<header>
+			<div class="mouse"></div>
 			<div class="titleContainer">
 				<div class="titleWrapper">
 					<span class="mainTitle">HARRy</span>
@@ -9,7 +10,7 @@
 				</div>
 				<span class="surnameTitle">steVen</span>
 			</div>
-			<nav style="color: white">hellow</nav>
+			<nav></nav>
 		</header>
 		<body>
 			<div class="subTitle" style="font-size: 200px">
@@ -36,7 +37,10 @@ export default {
 		for (const card of document.querySelectorAll(".card")) {
 			card.onmousemove = (event) => this.handleOnMouseMove(event);
 		}
-		window.addEventListener("scroll", this.handleOnScroll);
+		window.addEventListener("scroll", (event) => this.handleOnScroll(event));
+		document.addEventListener("mousemove", (event) =>
+			this.handleOnMouseMove(event)
+		);
 	},
 	unmounted() {
 		//document.removeEventListener(card.onmousemove);
@@ -52,9 +56,8 @@ export default {
 				card.style.setProperty("--mouse-y", `${this.navY}px`);
 			}
 		},
-		handleOnScroll() {
-			const headerHeight =
-				document.querySelector(".titleContainer").clientHeight;
+		handleOnScroll(event) {
+			document.querySelector('.mouse').setAttribute("style", `top: ${event.pageY}px; left: ${event.pageX}px`)
 			//if height => 22vw => 12vw
 			this.scrollY = window.pageYOffset / 5;
 			if (screen.width < 1000) {
@@ -84,12 +87,28 @@ export default {
 				}
 			}
 		},
+		handleOnMouseMove(event) {
+			document.querySelector('.mouse').setAttribute("style", `top: ${event.pageY}px; left: ${event.pageX}px`)
+		},
 	},
 };
 </script>
 <style>
 /*styles in sections in assets / styles and imported in main.js */
 body {
-	padding-top: 20px;
+	padding-top: 80px;
+	cursor: visible;
+}
+
+/*custom mouse */
+.mouse {
+	position: absolute;
+	width:5vw;
+	height:5vw;
+	background: green;
+	border-radius: 5vw;
+	transform: translate(-50%, -50%);
+	z-index:99;
+	pointer-events: none;
 }
 </style>
