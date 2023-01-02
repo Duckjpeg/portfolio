@@ -27,7 +27,7 @@
 export default {
 	data() {
 		return {
-			year: 2022,
+			year: 2023,
 			navX: 0,
 			navY: 0,
 			scrollY: 0,
@@ -46,7 +46,7 @@ export default {
 		window.addEventListener("scroll", this.handleOnScroll);
 	},
 	unmounted() {
-		document.removeEventListener(card.onmousemove);
+		//document.removeEventListener(card.onmousemove);
 		window.removeEventListener("scroll", this.handleOnScroll);
 	},
 	methods: {
@@ -60,18 +60,24 @@ export default {
 			}
 		},
 		handleOnScroll() {
-			this.scrollY = window.pageYOffset;
-			if (this.scrollY <= 350) {
-				document.documentElement.style.setProperty(
-					"--scrollY",
-					`${this.scrollY / 5}px`
-				);
+			const headerHeight =
+				document.querySelector(".titleContainer").clientHeight;
+			this.scrollY = window.pageYOffset / 5;
+			if (screen.width < 1000) {
+				//TODO: make it for scalable depending on screen width, SUBRACT a vw I think
 			} else {
-				this.scrollY = 350;
+				if (this.scrollY <= 75) {
+					document.documentElement.style.setProperty(
+						"--scrollY",
+						`${this.scrollY}px`
+					);
+				} else {
+					document.documentElement.style.setProperty(
+						"--scrollY",
+						`${75}px`
+					);
+				}
 			}
-			//document.querySelector(".slash").style.width = calc();
-			//need to adjust title wrapper background size using multiplier of scroll height
-			console.log(this.scrollY);
 		},
 	},
 };
@@ -113,7 +119,7 @@ body {
 	left: 0;
 	width: 100vw;
 	width: 100dvw;
-	height: calc(21.5vw - var(--scrollY) * 1.5);
+	height: calc(21vw - var(--scrollY));
 	background: linear-gradient(
 		180deg,
 		rgba(20 20 20 / 1) 0%,
@@ -175,10 +181,7 @@ body {
 		position: relative;
 		left: 50px;
 		font-size: calc(150px - var(--scrollY));
-		top:-6px;
-	}
-	.titleContainer {
-		padding: 20px 0 0 20px;
+		top: -6px;
 	}
 	.surnameTitle {
 		font-size: calc(30px - var(--scrollY) / 5);
@@ -188,7 +191,7 @@ body {
 	}
 	.titleContainer {
 		padding: 10px 0 0 20px;
-		height: calc(215px - var(--scrollY) * 1.5);
+		height: calc(210px - var(--scrollY) * 1.5);
 	}
 }
 @media screen and (max-width: 500px) {
@@ -221,7 +224,7 @@ body {
 	.titleContainer {
 		padding: 5px 0 0 5px;
 	}
-	.titleContainer > .titleWrapper > .afterSlash {
+	.titleContainer .afterSlash {
 		position: relative;
 		top: 4px;
 	}
