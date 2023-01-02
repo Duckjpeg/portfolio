@@ -89,8 +89,9 @@ trial and error an look nice on screen but not in code*/
 }
 @media screen and (max-width: 500px) {
 	.titleContainer {
-		left: 3.5vw;
-		height: 21.5vw; /*doesn't shrink since at that scale theres no point */
+		height: 25vw; /*doesn't shrink since at that scale theres no point */
+        padding:2vw 0 0 5vw;
+        /*lil bigger since nav now goes under*/
 	}
 	.slash {
 		top: 6px;

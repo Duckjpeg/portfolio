@@ -1,9 +1,6 @@
 <template>
 	<main>
 		<header>
-			<div class="sizeWarn">
-				This website may have some problems due to your screen width
-			</div>
 			<div class="titleContainer">
 				<div class="titleWrapper">
 					<span class="mainTitle">HARRy</span>
@@ -12,6 +9,7 @@
 				</div>
 				<span class="surnameTitle">steVen</span>
 			</div>
+			<nav style="color: white">hellow</nav>
 		</header>
 		<body>
 			<div class="subTitle" style="font-size: 200px">
@@ -38,11 +36,6 @@ export default {
 		for (const card of document.querySelectorAll(".card")) {
 			card.onmousemove = (event) => this.handleOnMouseMove(event);
 		}
-		//TODO: sort on scroll title shrinks to top left and when 3/4 through small nav bar fades in
-		//figure out how to make scrollY stay const depending on screen width
-		//above 1000px width 350px down is stop
-		//500w : 100px;
-		//
 		window.addEventListener("scroll", this.handleOnScroll);
 	},
 	unmounted() {
@@ -60,19 +53,21 @@ export default {
 			}
 		},
 		handleOnScroll() {
-			const headerHeight = document.querySelector(".titleContainer").clientHeight;
+			const headerHeight =
+				document.querySelector(".titleContainer").clientHeight;
 			//if height => 22vw => 12vw
 			this.scrollY = window.pageYOffset / 5;
 			if (screen.width < 1000) {
-				if ( this.scrollY*0.143 <= 10 ){ //should be *0.22 but js is tweaking
+				if (this.scrollY * 0.143 <= 10) {
+					//should be *0.22 but js is tweaking
 					document.documentElement.style.setProperty(
 						"--scrollY",
-						`${this.scrollY*0.14}vw`
-					); //should be 10vw ish 
+						`${this.scrollY * 0.14}vw`
+					); //should be 10vw ish
 				} else {
 					document.documentElement.style.setProperty(
 						"--scrollY",
-						`${70*0.143}vw` //should roughly be 10vw (1/7 * 70 to get 10)
+						`${70 * 0.143}vw` //should roughly be 10vw (1/7 * 70 to get 10)
 					); //should be 10vw
 				}
 			} else {
