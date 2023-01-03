@@ -1,5 +1,5 @@
 <template>
-	<section>
+	<section id="indexWrapper">
 		<header>
 			<div class="test" id="mouse"></div>
 			<div class="titleContainer">
@@ -147,8 +147,8 @@ export default {
 </script>
 <style>
 /*styles in sections in assets / styles and imported in main.js */
-main {
-	padding-top: 8vw; /*in titles this is set to a max value*/
+#indexWrapper {
+	padding-top: 14vw; /*in titles this is set to a max value*/
 	cursor: none;
 }
 

@@ -86,8 +86,8 @@ trial and error an look nice on screen but not in code*/
 		padding: 10px 0 0 20px;
 		height: calc(210px - var(--scrollY) * 1.5);
 	}
-	main {
-		padding-top: 80px;
+	#indexWrapper {
+		padding-top: 150px;
 	}
 }
 @media screen and (max-width: 500px) {
