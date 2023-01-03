@@ -5,7 +5,9 @@
 			<div class="mouse" id="line"></div>
 			<div class="titleContainer">
 				<div class="titleWrapper">
-					<span class="mainTitle">H<span id="spinnyA">A</span> RRy</span>
+					<span class="mainTitle"
+						>H<span id="spinnyA">A</span> RRy</span
+					>
 					<div class="slash"></div>
 					<span class="afterSlash">{{ year }}</span>
 				</div>
@@ -49,20 +51,6 @@ export default {
 		document.addEventListener("mousemove", (event) =>
 			this.handleOnMouseMove(event)
 		);
-		//to find page height
-		let B = document.body;
-		let H = document.documentElement;
-		if (typeof document.height !== "undefined") {
-			this.pageHeight = document.height; // For webkit browsers
-		} else {
-			this.pageHeight = Math.max(
-				B.scrollHeight,
-				B.offsetHeight,
-				H.clientHeight,
-				H.scrollHeight,
-				H.offsetHeight
-			);
-		}
 	},
 	unmounted() {
 		//document.removeEventListener(card.onmousemove);
@@ -79,6 +67,21 @@ export default {
 			}
 		},
 		handleOnScroll(event) {
+			//to find page height
+			let B = document.body;
+			let H = document.documentElement;
+			if (typeof document.height !== "undefined") {
+				this.pageHeight = document.height; // For webkit browsers
+			} else {
+				this.pageHeight = Math.max(
+					B.scrollHeight,
+					B.offsetHeight,
+					H.clientHeight,
+					H.scrollHeight,
+					H.offsetHeight
+				);
+			}
+			//in here because it change if screen width changes
 			document
 				.querySelector(".mouse")
 				.setAttribute(
@@ -87,8 +90,12 @@ export default {
 				);
 			document.documentElement.style.setProperty(
 				"--scroll",
-				`${(window.pageYOffset / (this.pageHeight-820)) * 720}deg` // gets a % of page height and rotates cursor to percent through page
-			);
+				`${
+					(window.pageYOffset /
+						(this.pageHeight - window.innerHeight)) *
+					720
+				}deg` // gets a % of page height and rotates cursor to percent through page
+			); //subtract window height since page offset doesn't = full page height / when its at bottom
 
 			//should be 10vw ish
 			//if height => 22vw => 12vw
@@ -157,6 +164,7 @@ body {
 	position: absolute;
 	transform-origin: 50% 55%;
 	transform: rotateZ(var(--scroll));
+	font-size: 95%;
 }
 .mouse {
 	position: fixed;
