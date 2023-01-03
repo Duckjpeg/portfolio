@@ -31,8 +31,11 @@ body {
 	left: 0;
 	top: 0;
 }
+body #mouse{
+	opacity:0;
+}
 body:hover #mouse{
-	color:green;
+	opacity:1;
 }
 .subTitle {
 	font-family: "Inter", sans-serif;

@@ -1,7 +1,7 @@
 <template>
 	<section>
 		<header>
-			<div id="mouse"></div>
+			<div class="test" id="mouse"></div>
 			<div class="titleContainer">
 				<div class="titleWrapper">
 					<span class="mainTitle"
