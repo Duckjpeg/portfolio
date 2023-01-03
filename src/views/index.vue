@@ -168,6 +168,11 @@ body {
 #spinnyV {
 	transform-origin: 15% 50%; /*no clue why such an odd value */
 }
+@media screen and (max-width: 1000px) {
+	#spinnyV {
+		top: 0.2vw;
+	}
+}
 .spinny {
 	position: absolute;
 	transform: rotateZ(var(--scroll));
