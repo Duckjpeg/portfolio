@@ -1,7 +1,7 @@
 <template>
-	<main>
+	<section id="pageWrapper">
 		<router-view />
-	</main>
+	</section>
 </template>
 <script>
 export default {};
@@ -26,10 +26,12 @@ export default {};
 body {
 	scroll-behavior: smooth;
 	background: var(--mainBg);
-	overflow-x: hidden;
 	display: absolute;
 	left: 0;
 	top: 0;
+}
+#pageWrapper{
+	overflow-x: hidden;
 }
 body #mouse{
 	opacity:0;
