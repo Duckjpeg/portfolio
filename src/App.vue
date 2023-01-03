@@ -17,6 +17,7 @@ export default {};
 	--titleFont: "Major Mono Display", monospace;
 
 	--scrollY: 0px;
+	--scroll: 0px;
 }
 ::selection {
 	background-color: var(--mainFontColor);

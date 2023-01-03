@@ -1,10 +1,11 @@
 <template>
 	<main>
 		<header>
-			<div class="mouse"></div>
+			<div class="mouse" id="circle"></div>
+			<div class="mouse" id="line"></div>
 			<div class="titleContainer">
 				<div class="titleWrapper">
-					<span class="mainTitle">HARRy</span>
+					<span class="mainTitle">H<span id="spinnyA">A</span> RRy</span>
 					<div class="slash"></div>
 					<span class="afterSlash">{{ year }}</span>
 				</div>
@@ -32,6 +33,7 @@ export default {
 			scrollY: 0,
 			mouseY: "0px",
 			mouseX: "0px",
+			pageHeight: 0,
 		};
 	},
 	mounted() {
@@ -47,6 +49,20 @@ export default {
 		document.addEventListener("mousemove", (event) =>
 			this.handleOnMouseMove(event)
 		);
+		//to find page height
+		let B = document.body;
+		let H = document.documentElement;
+		if (typeof document.height !== "undefined") {
+			this.pageHeight = document.height; // For webkit browsers
+		} else {
+			this.pageHeight = Math.max(
+				B.scrollHeight,
+				B.offsetHeight,
+				H.clientHeight,
+				H.scrollHeight,
+				H.offsetHeight
+			);
+		}
 	},
 	unmounted() {
 		//document.removeEventListener(card.onmousemove);
@@ -69,15 +85,17 @@ export default {
 					"style",
 					`top: ${this.mouseY}px; left: ${this.mouseX}px`
 				);
+			document.documentElement.style.setProperty(
+				"--scroll",
+				`${(window.pageYOffset / (this.pageHeight-820)) * 720}deg` // gets a % of page height and rotates cursor to percent through page
+			);
+
+			//should be 10vw ish
 			//if height => 22vw => 12vw
 			this.scrollY = window.pageYOffset / 5;
 			if (screen.width < 1000) {
 				if (this.scrollY * 0.143 <= 10) {
 					//should be *0.22 but js is tweaking
-					document.documentElement.style.setProperty(
-						"--scrollY",
-						`${this.scrollY * 0.14}vw`
-					); //should be 10vw ish
 				} else {
 					document.documentElement.style.setProperty(
 						"--scrollY",
@@ -101,6 +119,14 @@ export default {
 		handleOnMouseMove(event) {
 			this.mouseY = event.clientY;
 			this.mouseX = event.clientX;
+			document.documentElement.style.setProperty(
+				"--mouseY",
+				`${this.mouseY}px`
+			);
+			document.documentElement.style.setProperty(
+				"--mouseX",
+				`${this.mouseX}px`
+			);
 			document
 				.querySelector(".mouse")
 				.setAttribute(
@@ -115,20 +141,29 @@ export default {
 /*styles in sections in assets / styles and imported in main.js */
 body {
 	padding-top: 80px;
-	cursor: visible;
+	cursor: none;
 }
 
 /*custom mouse */
-.mouse {
-	position: fixed;
+#circle {
 	width: 40px;
 	height: 40px;
 	background: rgb(20, 20, 20);
 	border: 5px solid rgb(255, 255, 255);
 	border-radius: 40px;
 	transform: translate(-50%, -50%);
+}
+#spinnyA {
+	position: absolute;
+	transform-origin: 50% 55%;
+	transform: rotateZ(var(--scroll));
+}
+.mouse {
+	position: fixed;
 	z-index: 99;
 	pointer-events: none;
 	mix-blend-mode: difference;
+	left: var(--mouseX);
+	top: var(--mouseY);
 }
 </style>
