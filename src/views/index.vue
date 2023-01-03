@@ -1,8 +1,7 @@
 <template>
-	<main>
+	<section>
 		<header>
-			<div class="mouse" id="circle"></div>
-			<div class="mouse" id="line"></div>
+			<div id="mouse"></div>
 			<div class="titleContainer">
 				<div class="titleWrapper">
 					<span class="mainTitle"
@@ -17,15 +16,15 @@
 			</div>
 			<nav></nav>
 		</header>
-		<body>
+		<main>
 			<div class="subTitle" style="font-size: 200px">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Recusandae numquam, vel obcaecati, nobis perspiciatis velit, a
 				distinctio dicta hic reprehenderit tempore. Ratione, voluptate!
 				Quam ea nulla vitae fuga porro eaque!
 			</div>
-		</body>
-	</main>
+		</main>
+	</section>
 </template>
 <script>
 export default {
@@ -85,7 +84,7 @@ export default {
 			}
 			//in here because it change if screen width changes
 			document
-				.querySelector(".mouse")
+				.querySelector("#mouse")
 				.setAttribute(
 					"style",
 					`top: ${this.mouseY}px; left: ${this.mouseX}px`
@@ -137,7 +136,7 @@ export default {
 				`${this.mouseX}px`
 			);
 			document
-				.querySelector(".mouse")
+				.querySelector("#mouse")
 				.setAttribute(
 					"style",
 					`top: ${this.mouseY}px; left: ${this.mouseX}px`
@@ -148,13 +147,19 @@ export default {
 </script>
 <style>
 /*styles in sections in assets / styles and imported in main.js */
-body {
-	padding-top: 80px;
+main {
+	padding-top: 8vw; /*in titles this is set to a max value*/
 	cursor: none;
 }
 
 /*custom mouse */
-#circle {
+#mouse {
+	position: fixed;
+	z-index: 99;
+	pointer-events: none;
+	mix-blend-mode: difference;
+	left: var(--mouseX);
+	top: var(--mouseY);
 	width: 40px;
 	height: 40px;
 	background: rgb(20, 20, 20);
@@ -168,22 +173,14 @@ body {
 #spinnyV {
 	transform-origin: 15% 50%; /*no clue why such an odd value */
 }
-@media screen and (max-width: 1000px) {
-	#spinnyV {
-		top: 0.2vw;
-	}
-}
 .spinny {
 	position: absolute;
 	transform: rotateZ(var(--scroll));
 	font-size: 95%;
 }
-.mouse {
-	position: fixed;
-	z-index: 99;
-	pointer-events: none;
-	mix-blend-mode: difference;
-	left: var(--mouseX);
-	top: var(--mouseY);
+@media screen and (max-width: 1000px) {
+	#spinnyV {
+		top: 0.2vw;
+	}
 }
 </style>

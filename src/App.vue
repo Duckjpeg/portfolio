@@ -31,6 +31,9 @@ body {
 	left: 0;
 	top: 0;
 }
+body:hover #mouse{
+	color:green;
+}
 .subTitle {
 	font-family: "Inter", sans-serif;
 	font-weight: 700; /*weights - 700, 100, 300*/

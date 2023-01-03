@@ -3,7 +3,7 @@ trial and error an look nice on screen but not in code*/
 
 .mainTitle {
 	font-family: var(--titleFont);
-	font-size: calc(11.5vw - var(--scrollY)/2);
+	font-size: calc(11.5vw - var(--scrollY) / 2);
 	color: var(--mainFontColor);
 }
 .surnameTitle {
@@ -12,14 +12,14 @@ trial and error an look nice on screen but not in code*/
 	color: var(--smallTextColor);
 	position: relative;
 	left: 0.5vw;
-	top: calc(-3.5vw + var(--scrollY) /20);
-	letter-spacing: calc(5.1vw - var(--scrollY)/4.2);
+	top: calc(-3.5vw + var(--scrollY) / 20);
+	letter-spacing: calc(5.1vw - var(--scrollY) / 4.2);
 }
 .afterSlash {
 	font-family: var(--titleFont);
 	color: var(--mainFontColor);
 	position: relative;
-	font-size: calc(14vw - var(--scrollY)/1.8);
+	font-size: calc(14vw - var(--scrollY) / 1.8);
 	left: 5vw;
 }
 .titleWrapper {
@@ -46,7 +46,7 @@ trial and error an look nice on screen but not in code*/
 }
 .slash {
 	width: 1vw;
-	height: calc(15vw - var(--scrollY)/1.8);
+	height: calc(15vw - var(--scrollY) / 1.8);
 	max-width: 10px;
 	max-height: 150px;
 	background: linear-gradient(
@@ -86,12 +86,15 @@ trial and error an look nice on screen but not in code*/
 		padding: 10px 0 0 20px;
 		height: calc(210px - var(--scrollY) * 1.5);
 	}
+	main {
+		padding-top: 80px;
+	}
 }
 @media screen and (max-width: 500px) {
 	.titleContainer {
 		height: 25vw; /*doesn't shrink since at that scale theres no point */
-        padding:2vw 0 0 5vw;
-        /*lil bigger since nav now goes under*/
+		padding: 2vw 0 0 5vw;
+		/*lil bigger since nav now goes under*/
 	}
 	.slash {
 		top: 6px;
