@@ -6,12 +6,14 @@
 			<div class="titleContainer">
 				<div class="titleWrapper">
 					<span class="mainTitle"
-						>H<span id="spinnyA">A</span> RRy</span
+						>H<span class="spinny" id="spinnyA">A</span> RRy</span
 					>
 					<div class="slash"></div>
 					<span class="afterSlash">{{ year }}</span>
 				</div>
-				<span class="surnameTitle">steVen</span>
+				<span class="surnameTitle"
+					>ste<span class="spinny" id="spinnyV">V</span> en</span
+				>
 			</div>
 			<nav></nav>
 		</header>
@@ -161,8 +163,13 @@ body {
 	transform: translate(-50%, -50%);
 }
 #spinnyA {
-	position: absolute;
 	transform-origin: 50% 55%;
+}
+#spinnyV {
+	transform-origin: 15% 50%; /*no clue why such an odd value */
+}
+.spinny {
+	position: absolute;
 	transform: rotateZ(var(--scroll));
 	font-size: 95%;
 }
