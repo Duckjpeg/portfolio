@@ -30,14 +30,20 @@ export default {
 			navX: 0,
 			navY: 0,
 			scrollY: 0,
+			mouseY: "0px",
+			mouseX: "0px",
 		};
 	},
 	mounted() {
 		this.year = new Date().getFullYear();
+
 		for (const card of document.querySelectorAll(".card")) {
 			card.onmousemove = (event) => this.handleOnMouseMove(event);
 		}
-		window.addEventListener("scroll", (event) => this.handleOnScroll(event));
+
+		window.addEventListener("scroll", (event) =>
+			this.handleOnScroll(event)
+		);
 		document.addEventListener("mousemove", (event) =>
 			this.handleOnMouseMove(event)
 		);
@@ -57,7 +63,12 @@ export default {
 			}
 		},
 		handleOnScroll(event) {
-			document.querySelector('.mouse').setAttribute("style", `top: ${event.pageY}px; left: ${event.pageX}px`)
+			document
+				.querySelector(".mouse")
+				.setAttribute(
+					"style",
+					`top: ${this.mouseY}px; left: ${this.mouseX}px`
+				);
 			//if height => 22vw => 12vw
 			this.scrollY = window.pageYOffset / 5;
 			if (screen.width < 1000) {
@@ -88,7 +99,14 @@ export default {
 			}
 		},
 		handleOnMouseMove(event) {
-			document.querySelector('.mouse').setAttribute("style", `top: ${event.pageY}px; left: ${event.pageX}px`)
+			this.mouseY = event.clientY;
+			this.mouseX = event.clientX;
+			document
+				.querySelector(".mouse")
+				.setAttribute(
+					"style",
+					`top: ${this.mouseY}px; left: ${this.mouseX}px`
+				);
 		},
 	},
 };
@@ -102,13 +120,15 @@ body {
 
 /*custom mouse */
 .mouse {
-	position: absolute;
-	width:5vw;
-	height:5vw;
-	background: green;
-	border-radius: 5vw;
+	position: fixed;
+	width: 40px;
+	height: 40px;
+	background: rgb(20, 20, 20);
+	border: 5px solid rgb(255, 255, 255);
+	border-radius: 40px;
 	transform: translate(-50%, -50%);
-	z-index:99;
+	z-index: 99;
 	pointer-events: none;
+	mix-blend-mode: difference;
 }
 </style>
