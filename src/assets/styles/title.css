@@ -27,6 +27,7 @@ trial and error an look nice on screen but not in code*/
 	flex-direction: row;
 }
 .titleContainer {
+	z-index:50;
 	padding: 1vw 0 0 2vw;
 	position: fixed;
 	top: 0;
