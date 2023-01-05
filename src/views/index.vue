@@ -167,7 +167,7 @@ export default {
 	margin:0.725vw; /*TODO: make work on screen sizes */
 	transform:skew(-20deg);
 }
-#line1{
+#line1{ /*TODO: make so no animate on page load */
 	animation: line-1-close 600ms forwards;
 }
 #line2{
