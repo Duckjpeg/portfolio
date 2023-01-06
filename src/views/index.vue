@@ -41,11 +41,9 @@ export default {
 	},
 	mounted() {
 		this.year = new Date().getFullYear();
-
 		for (const card of document.querySelectorAll(".card")) {
 			card.onmousemove = (event) => this.handleOnMouseMove(event);
 		}
-
 		window.addEventListener("scroll", (event) =>
 			this.handleOnScroll(event)
 		);
@@ -97,13 +95,15 @@ export default {
 					720
 				}deg` // gets a % of page height and rotates cursor to percent through page
 			); //subtract window height since page offset doesn't = full page height / when its at bottom
-
 			//should be 10vw ish
 			//if height => 22vw => 12vw
 			this.scrollY = window.pageYOffset / 5;
 			if (screen.width < 1000) {
 				if (this.scrollY * 0.143 <= 10) {
-					//should be *0.22 but js is tweaking
+					document.documentElement.style.setProperty(
+						"--scrollY",
+						`${this.scrollY * 0.143}vw` //should roughly be 10vw (1/7 * 70 to get 10)
+					); //should be 10vw
 				} else {
 					document.documentElement.style.setProperty(
 						"--scrollY",
@@ -151,7 +151,6 @@ export default {
 	padding-top: 14vw; /*in titles this is set to a max value*/
 	cursor: none;
 }
-
 /*custom mouse */
 #mouse {
 	position: fixed;
@@ -171,6 +170,7 @@ export default {
 	transform-origin: 50% 55%;
 }
 #spinnyV {
+	top: 2px;
 	transform-origin: 15% 50%; /*no clue why such an odd value */
 }
 .spinny {
@@ -178,9 +178,10 @@ export default {
 	transform: rotateZ(var(--scroll));
 	font-size: 95%;
 }
+/*below 1000px */
 @media screen and (max-width: 1000px) {
 	#spinnyV {
-		top: 0.2vw;
+		top: 0.1vw;
 	}
 }
 </style>

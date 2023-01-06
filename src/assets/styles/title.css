@@ -1,26 +1,29 @@
 /*all var(--scrollY) / num, numberes were found through 
 trial and error an look nice on screen but not in code*/
 
+/*below 1000 and above 500*/
 .mainTitle {
 	font-family: var(--titleFont);
-	font-size: calc(11.5vw - var(--scrollY) / 2);
+	font-size: calc(10vw - var(--scrollY) / 5);
 	color: var(--mainFontColor);
 }
 .surnameTitle {
 	font-family: var(--titleFont);
-	font-size: calc(3vw - var(--scrollY) / 9);
+	font-size: calc(2vw - var(--scrollY) / 200);
 	color: var(--smallTextColor);
 	position: relative;
 	left: 0.5vw;
-	top: calc(-3.5vw + var(--scrollY) / 20);
-	letter-spacing: calc(5.1vw - var(--scrollY) / 4.2);
+	top: calc(-4.5vw + var(--scrollY) / 10);
+	letter-spacing: calc(4.95vw - var(--scrollY) / 7.5);
 }
 .afterSlash {
 	font-family: var(--titleFont);
 	color: var(--mainFontColor);
 	position: relative;
-	font-size: calc(14vw - var(--scrollY) / 1.8);
-	left: 5vw;
+	font-size: calc(13vw - var(--scrollY) / 3);
+	top: 0.1vw;
+	left: 3vw;
+	bottom: 0.5vw;
 }
 .titleWrapper {
 	display: flex;
@@ -33,20 +36,20 @@ trial and error an look nice on screen but not in code*/
 	left: 0;
 	width: 100vw;
 	width: 100dvw;
-	height: calc(21vw - var(--scrollY));
+	height: calc(21vw - var(--scrollY) / 2);
 	background: linear-gradient(
 		180deg,
 		rgba(20 20 20 / 1) 0%,
 		rgba(20 20 20 / 1) 75%,
-		rgba(20 20 20 / 0.9) 85%,
-		rgba(20 20 20 / 0.7) 92%,
-		rgba(20, 20, 20, 0.5) 95%,
+		rgba(20 20 20 / 0.9) 87%,
+		rgba(20 20 20 / 0.7) 94%,
+		rgba(20, 20, 20, 0.5) 97%,
 		rgba(0, 0, 0, 0) 100%
 	);
 }
 .slash {
-	width: 1vw;
-	height: calc(15vw - var(--scrollY) / 1.8);
+	width: 0.6vw;
+	height: calc(15vw - var(--scrollY) / 2.5);
 	max-width: 10px;
 	max-height: 150px;
 	background: linear-gradient(
@@ -58,29 +61,31 @@ trial and error an look nice on screen but not in code*/
 		rgba(20 20 20 /0)
 	);
 	position: relative;
-	left: 3.5vw;
+	left: 2vw;
 	transform: skew(-30deg);
 }
 
+/*above 1000px*/
 @media screen and (min-width: 1000px) {
 	.mainTitle {
-		font-size: calc(120px - var(--scrollY) * 0.9);
+		font-size: calc(110px - var(--scrollY) * 0.9);
 	}
 	.slash {
-		left: 35px;
-		height: calc(150px - var(--scrollY));
+		left: 15px;
+		height: calc(130px - var(--scrollY));
+		width: calc(10px - var(--scrollY) / 15);
 	}
 	.afterSlash {
 		position: relative;
-		left: 50px;
-		font-size: calc(150px - var(--scrollY));
+		left: 25px;
+		font-size: calc(130px - var(--scrollY));
 		top: -6px;
 	}
 	.surnameTitle {
-		font-size: calc(30px - var(--scrollY) / 5);
+		font-size: calc(25px - var(--scrollY) / 5);
 		left: 5px;
-		top: calc(-35px + var(--scrollY) / 10);
-		letter-spacing: calc(55px - var(--scrollY) / 2.25);
+		top: calc(-25px + var(--scrollY) / 10);
+		letter-spacing: calc(52px - var(--scrollY) / 2.25);
 	}
 	.titleContainer {
 		padding: 10px 0 0 20px;
