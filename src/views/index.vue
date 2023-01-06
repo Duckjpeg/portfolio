@@ -4,7 +4,7 @@
 			<div class="test" id="mouse"></div>
 			<div class="titleContainer">
 				<div class="titleWrapper">
-					<span class="mainTitle"
+					<span class="mainTitle mainTitleTemplate"
 						>H<span class="spinny" id="spinnyA">A</span> RRy</span
 					>
 					<div class="slash"></div>
@@ -17,7 +17,11 @@
 			<nav></nav>
 		</header>
 		<main>
-			<div class="subTitle" style="font-size: 200px">
+			<div class="mainTitleTemplate" style="font-size: 80px">
+				Home
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contact
+			</div>
+			<div class="subTitle" style="font-size: 100px">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Recusandae numquam, vel obcaecati, nobis perspiciatis velit, a
 				distinctio dicta hic reprehenderit tempore. Ratione, voluptate!
@@ -147,9 +151,8 @@ export default {
 </script>
 <style>
 /*styles in sections in assets / styles and imported in main.js */
-#indexWrapper {
-	padding-top: 14vw; /*in titles this is set to a max value*/
-	cursor: none;
+#indexWrapper > main {
+	padding-top: 20vw; /*in titles this is set to a max value*/
 }
 /*custom mouse */
 #mouse {

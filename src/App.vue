@@ -7,6 +7,9 @@
 export default {};
 </script>
 <style>
+*{
+	cursor: none;
+}
 :root {
 	--mainBg: rgb(20 20 20);
 	--mainFontColor: rgb(235 235 235);
@@ -38,6 +41,10 @@ body #mouse{
 }
 body:hover #mouse{
 	opacity:1;
+}
+.mainTitleTemplate{
+	font-family: var(--titleFont);
+	color: var(--mainFontColor);
 }
 .subTitle {
 	font-family: "Inter", sans-serif;

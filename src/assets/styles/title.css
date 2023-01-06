@@ -3,9 +3,7 @@ trial and error an look nice on screen but not in code*/
 
 /*below 1000 and above 500*/
 .mainTitle {
-	font-family: var(--titleFont);
 	font-size: calc(10vw - var(--scrollY) / 5);
-	color: var(--mainFontColor);
 }
 .surnameTitle {
 	font-family: var(--titleFont);
@@ -91,8 +89,8 @@ trial and error an look nice on screen but not in code*/
 		padding: 10px 0 0 20px;
 		height: calc(210px - var(--scrollY) * 1.5);
 	}
-	#indexWrapper {
-		padding-top: 150px;
+	#indexWrapper > main {
+		padding-top: 220px;
 	}
 }
 @media screen and (max-width: 500px) {
