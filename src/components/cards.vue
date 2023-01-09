@@ -65,7 +65,13 @@
 	</div>
 </template>
 <script>
-export default {};
+export default {
+	mounted() {
+		for (const card of document.querySelectorAll(".card")) {
+			card.onmousemove = (event) => this.handleOnMouseMove(event);
+		}
+	},
+};
 </script>
 <style scoped>
 .navBar {

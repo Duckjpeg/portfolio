@@ -55,16 +55,16 @@ export default {
 	width: 0;
 	height: 0;
 	border-style: solid;
-	border-width: 0 30px 51.1px 30px;
+	border-width: 0 15px 26.0px 15px;
 	border-color: transparent transparent rgba(0, 255, 153, 0.7) transparent;
 	position: fixed;
 	z-index: 99;
 	pointer-events: none;
 	mix-blend-mode: difference;
-    transform-origin: 50% 65%;
-    translate:-50% -60%;
+	transform-origin: 50% 65%;
+	translate: -50% -60%;
 	left: var(--mouseX);
 	top: var(--mouseY);
-	rotate: var(--scrollRotate);
+	rotate: calc(180deg + var(--scrollRotate));
 }
 </style>
