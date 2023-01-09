@@ -1,7 +1,7 @@
 <template>
 	<section id="indexWrapper">
 		<header>
-			<div class="test" id="mouse"></div>
+			<mouse />
 			<div class="titleContainer">
 				<div class="titleWrapper">
 					<span class="mainTitle mainTitleTemplate"
@@ -14,24 +14,26 @@
 					>ste<span class="spinny" id="spinnyV">V</span> en</span
 				>
 			</div>
-			<nav></nav>
 		</header>
-		<main>
-			<div class="mainTitleTemplate" style="font-size: 80px">
-				Home
-				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;contact
-			</div>
-			<div class="subTitle" style="font-size: 100px">
+		<nav>
+			<a href="#start" style="position: fixed">Start</a>
+		</nav>
+		<main id="start">
+			<div class="subTitle" style="font-size: 200px">
 				Lorem ipsum dolor sit amet consectetur adipisicing elit.
 				Recusandae numquam, vel obcaecati, nobis perspiciatis velit, a
-				distinctio dicta hic reprehenderit tempore. Ratione, voluptate!
+				distinctio dicta hic reprehenderit tempore. Ratione, Loluptate!
 				Quam ea nulla vitae fuga porro eaque!
 			</div>
 		</main>
 	</section>
 </template>
 <script>
+import mouse from "../components/mouse.vue";
 export default {
+	components: {
+		mouse,
+	},
 	data() {
 		return {
 			year: 2023,
@@ -73,6 +75,7 @@ export default {
 			//to find page height
 			let B = document.body;
 			let H = document.documentElement;
+			console.log(B, H);
 			if (typeof document.height !== "undefined") {
 				this.pageHeight = document.height; // For webkit browsers
 			} else {
@@ -92,7 +95,7 @@ export default {
 					`top: ${this.mouseY}px; left: ${this.mouseX}px`
 				);
 			document.documentElement.style.setProperty(
-				"--scroll",
+				"--scrollRotate",
 				`${
 					(window.pageYOffset /
 						(this.pageHeight - window.innerHeight)) *
@@ -128,24 +131,7 @@ export default {
 				}
 			}
 		},
-		handleOnMouseMove(event) {
-			this.mouseY = event.clientY;
-			this.mouseX = event.clientX;
-			document.documentElement.style.setProperty(
-				"--mouseY",
-				`${this.mouseY}px`
-			);
-			document.documentElement.style.setProperty(
-				"--mouseX",
-				`${this.mouseX}px`
-			);
-			document
-				.querySelector("#mouse")
-				.setAttribute(
-					"style",
-					`top: ${this.mouseY}px; left: ${this.mouseX}px`
-				);
-		},
+		handleOnMouseMove(event) {},
 	},
 };
 </script>
@@ -153,21 +139,6 @@ export default {
 /*styles in sections in assets / styles and imported in main.js */
 #indexWrapper > main {
 	padding-top: 20vw; /*in titles this is set to a max value*/
-}
-/*custom mouse */
-#mouse {
-	position: fixed;
-	z-index: 99;
-	pointer-events: none;
-	mix-blend-mode: difference;
-	left: var(--mouseX);
-	top: var(--mouseY);
-	width: 40px;
-	height: 40px;
-	background: rgb(20, 20, 20);
-	border: 5px solid rgb(255, 255, 255);
-	border-radius: 40px;
-	transform: translate(-50%, -50%);
 }
 #spinnyA {
 	transform-origin: 50% 55%;
@@ -178,7 +149,7 @@ export default {
 }
 .spinny {
 	position: absolute;
-	transform: rotateZ(var(--scroll));
+	transform: rotateZ(var(--scrollRotate));
 	font-size: 95%;
 }
 /*below 1000px */

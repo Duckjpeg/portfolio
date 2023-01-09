@@ -7,7 +7,7 @@
 export default {};
 </script>
 <style>
-*{
+* {
 	cursor: none;
 }
 :root {
@@ -33,16 +33,16 @@ body {
 	left: 0;
 	top: 0;
 }
-#pageWrapper{
+#pageWrapper {
 	overflow-x: hidden;
 }
-body #mouse{
-	opacity:0;
+body #mouse {
+	opacity: 0;
 }
-body:hover #mouse{
-	opacity:1;
+body:hover #mouse {
+	opacity: 1;
 }
-.mainTitleTemplate{
+.mainTitleTemplate {
 	font-family: var(--titleFont);
 	color: var(--mainFontColor);
 }

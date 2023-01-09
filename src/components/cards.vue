@@ -67,7 +67,7 @@
 <script>
 export default {};
 </script>
-<style>
+<style scoped>
 .navBar {
 	position: relative;
 	display: flex;

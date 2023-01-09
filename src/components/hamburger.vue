@@ -7,7 +7,7 @@
 	</div>
 </template>
 <script></script>
-<style>
+<style scoped>
 .bar {
 	width: 10vw;
 	height: 2vw;
