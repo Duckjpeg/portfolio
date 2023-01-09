@@ -32,6 +32,8 @@ export default {
 <style>
 nav {
 	position: fixed;
+	top: 0;
+	left: 0;
 	height: 100vh;
 	width: 100px;
 	background: purple;
