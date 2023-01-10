@@ -7,6 +7,9 @@
 export default {};
 </script>
 <style>
+*{
+	cursor:none;
+}
 :root {
 	--mainBg: rgb(20 20 20);
 	--mainFontColor: rgb(235 235 235);
