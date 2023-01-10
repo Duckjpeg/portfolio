@@ -9,6 +9,7 @@ export default {};
 <style>
 *{
 	cursor:none;
+	scroll-behavior: smooth;
 }
 :root {
 	--mainBg: rgb(20 20 20);
@@ -27,7 +28,6 @@ export default {};
 	color: var(--mainBg);
 }
 body {
-	scroll-behavior: smooth;
 	background: var(--mainBg);
 	display: absolute;
 	left: 0;

@@ -1,14 +1,21 @@
 <template>
 	<section id="indexWrapper">
+		<div id="start" style="position:absolute;top:0"></div>
 		<nav>
-			<a href="#start" class="navElement hover">stARt</a>
+			<div class="elementWrapper">
+				<a href="#start" class="hover">stARt</a>
+				<div class="seperator"></div>
+				<a href="#about" class="hover">About</a>
+				<div class="seperator"></div>
+				<a href="#contact" class="hover">contAct</a>
+			</div>
 		</nav>
 		<section id="content">
 			<header>
 				<mouse />
 				<topPage id="titleComp" />
 			</header>
-			<main id="start">
+			<main>
 				<div class="subTitle" style="font-size: 200px">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Recusandae numquam, vel obcaecati, nobis perspiciatis velit,
@@ -36,13 +43,30 @@ nav {
 	left: 0;
 	height: 100vh;
 	width: 100px;
-	background: purple;
+	background: rgb( 20 20 20);
 	z-index: 98;
 }
-.navElement {
+nav > div{
+	position:relative;
+	width:100vh;
+	transform-origin: top right;
+	translate: -100% 0 ;
+	rotate:-90deg;
+	left:35%;
+	display: flex;
+	justify-content: space-around;
+}
+nav > div > a {
 	text-decoration: none;
+	font-size:30px;
 	color: aquamarine;
 	font-family: var(--titleFont);
+}
+.seperator{
+	width:10px;
+	height:10px;
+	border-radius: 20px;
+	border: purple solid;
 }
 #content {
 	position: relative;
