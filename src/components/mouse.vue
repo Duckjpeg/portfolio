@@ -21,25 +21,11 @@ export default {
 		window.addEventListener("mousemove", (event) =>
 			this.handleMousePositon(event)
 		);
-		document.addEventListener("scroll", () =>
-			this.handleMousePositonScroll()
-		);
 	},
 	methods: {
 		handleMousePositon(event) {
 			this.mouseY = event.clientY;
 			this.mouseX = event.clientX;
-			document.documentElement.style.setProperty(
-				"--mouseY",
-				`${this.mouseY}px`
-			);
-			document.documentElement.style.setProperty(
-				"--mouseX",
-				`${this.mouseX}px`
-			);
-		},
-		handleMousePositonScroll() {
-			//in here because it change if screen width changes
 			document.documentElement.style.setProperty(
 				"--mouseY",
 				`${this.mouseY}px`

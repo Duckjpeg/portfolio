@@ -71,6 +71,17 @@ export default {
 			card.onmousemove = (event) => this.handleOnMouseMove(event);
 		}
 	},
+	methods: {
+		handleOnMouseMove(event) {
+			for (const card of document.querySelectorAll(".card")) {
+				const rect = card.getBoundingClientRect(); //gets info on rectangle
+				this.navX = event.clientX - rect.left; //make x and Y relative to the card
+				this.navY = event.clientY - rect.top; //its like imagine it was outside the box
+				card.style.setProperty("--mouse-x", `${this.navX}px`); //sets it for css
+				card.style.setProperty("--mouse-y", `${this.navY}px`);
+			}
+		},
+	},
 };
 </script>
 <style scoped>

@@ -2,9 +2,9 @@
 	<section id="indexWrapper">
 		<div id="start" style="position: absolute; top: 0"></div>
 		<navBar />
+		<mouse />
 		<section>
 			<header>
-				<mouse />
 				<topPage id="titleComp" />
 			</header>
 			<main>

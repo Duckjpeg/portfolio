@@ -28,24 +28,12 @@ export default {
 		window.addEventListener("scroll", (event) =>
 			this.handleOnScroll(event)
 		);
-		document.addEventListener("mousemove", (event) =>
-			this.handleOnMouseMove(event)
-		);
 	},
 	unmounted() {
 		//document.removeEventListener(card.onmousemove);
-		window.removeEventListener("scroll", this.handleOnScroll);
+		window.removeEventListener("mousemove", this.handleOnScroll);
 	},
 	methods: {
-		handleOnMouseMove(event) {
-			for (const card of document.querySelectorAll(".card")) {
-				const rect = card.getBoundingClientRect(); //gets info on rectangle
-				this.navX = event.clientX - rect.left; //make x and Y relative to the card
-				this.navY = event.clientY - rect.top; //its like imagine it was outside the box
-				card.style.setProperty("--mouse-x", `${this.navX}px`); //sets it for css
-				card.style.setProperty("--mouse-y", `${this.navY}px`);
-			}
-		},
 		handleOnScroll(event) {
 			//to find page height
 			let B = document.body;
@@ -62,12 +50,6 @@ export default {
 				);
 			}
 			//in here because it change if screen width changes
-			document
-				.querySelector("#mouse")
-				.setAttribute(
-					"style",
-					`top: ${this.mouseY}px; left: ${this.mouseX}px`
-				);
 			document.documentElement.style.setProperty(
 				"--scrollRotate",
 				`${
