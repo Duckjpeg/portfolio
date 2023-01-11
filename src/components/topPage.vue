@@ -50,7 +50,6 @@ export default {
 			//to find page height
 			let B = document.body;
 			let H = document.documentElement;
-			console.log(B, H);
 			if (typeof document.height !== "undefined") {
 				this.pageHeight = document.height; // For webkit browsers
 			} else {

@@ -9,12 +9,17 @@ export default {};
 <style>
 * {
 	cursor: none;
+	scroll-behavior: smooth;
 }
+/*z-index: 99 -> mouse -> navbar -> title */
 :root {
 	--mainBg: rgb(20 20 20);
 	--mainFontColor: rgb(235 235 235);
 	--subFontColor: rgb(200 200 200);
 	--smallTextColor: rgb(130 130 130);
+
+	--goldColor:rgb(255, 213, 0);
+	--scaleMouse : 1;
 
 	--mainFont: "Inter", sans-serif;
 	--titleFont: "Major Mono Display", monospace;
@@ -27,7 +32,6 @@ export default {};
 	color: var(--mainBg);
 }
 body {
-	scroll-behavior: smooth;
 	background: var(--mainBg);
 	display: absolute;
 	left: 0;

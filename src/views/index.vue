@@ -1,20 +1,23 @@
 <template>
 	<section id="indexWrapper">
-		<nav>
-			<a href="#start" class="navElement hover">stARt</a>
-		</nav>
-		<section id="content">
+		<div id="start" style="position: absolute; top: 0"></div>
+		<navBar />
+		<section>
 			<header>
 				<mouse />
 				<topPage id="titleComp" />
 			</header>
-			<main id="start">
-				<div class="subTitle" style="font-size: 200px">
+			<main>
+				<section class="subTitle content" style="font-size: 200px">
 					Lorem ipsum dolor sit amet consectetur adipisicing elit.
 					Recusandae numquam, vel obcaecati, nobis perspiciatis velit,
 					a distinctio dicta hic reprehenderit tempore. Ratione,
 					Loluptate! Quam ea nulla vitae fuga porro eaque!
-				</div>
+				</section>
+				<section id="about" class="content">
+					show case with stuff like what I do why me what I have
+					learnt you top priority rates and how I do buisness
+				</section>
 			</main>
 		</section>
 	</section>
@@ -22,33 +25,21 @@
 <script>
 import mouse from "../components/mouse.vue";
 import topPage from "../components/topPage.vue";
+import navBar from "../components/navBar.vue";
 export default {
 	components: {
 		mouse,
 		topPage,
+		navBar,
 	},
 };
 </script>
 <style>
-nav {
-	position: fixed;
-	top: 0;
-	left: 0;
-	height: 100vh;
-	width: 100px;
-	background: purple;
-	z-index: 98;
-}
-.navElement {
-	text-decoration: none;
-	color: aquamarine;
-	font-family: var(--titleFont);
-}
-#content {
-	position: relative;
-	left: 100px;
+.content {
+	margin-left: 100px;
 }
 #titleComp {
+	z-index: 97;
 	padding-left: 120px;
 }
 
@@ -64,6 +55,7 @@ nav {
 	transform-origin: 15% 50%; /*no clue why such an odd value */
 }
 .spinny {
+	color: var(--goldColor);
 	position: absolute;
 	transform: rotateZ(var(--scrollRotate));
 	font-size: 95%;
