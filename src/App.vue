@@ -18,6 +18,8 @@ export default {};
 	--subFontColor: rgb(200 200 200);
 	--smallTextColor: rgb(130 130 130);
 
+	--fixedElementsBg: rgb( 30 30 60);
+
 	--goldColor:rgb(255, 213, 0);
 	--scaleMouse : 1;
 

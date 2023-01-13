@@ -127,16 +127,8 @@ trial and error an look nice on screen but not in code*/
 	left: 0;
 	width: 100vw;
 	width: 100dvw;
-	height: calc(21vw - var(--scrollY) / 2);
-	background: linear-gradient(
-		180deg,
-		rgba(20 20 20 / 1) 0%,
-		rgba(20 20 20 / 1) 75%,
-		rgba(20 20 20 / 0.9) 87%,
-		rgba(20 20 20 / 0.7) 94%,
-		rgba(20, 20, 20, 0.5) 97%,
-		rgba(0, 0, 0, 0) 100%
-	);
+	height: calc(16vw - var(--scrollY) / 2.8);
+	background: var(--fixedElementsBg);
 }
 .slash {
 	width: 0.6vw;
@@ -180,7 +172,7 @@ trial and error an look nice on screen but not in code*/
 	}
 	.titleContainer {
 		padding: 20px 0 0 20px;
-		height: calc(210px - var(--scrollY) * 1.5);
+		height: calc(160px - var(--scrollY) * 1.2);
 	}
 	#indexWrapper > main {
 		padding-top: 220px;

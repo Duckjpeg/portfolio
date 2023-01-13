@@ -10,6 +10,7 @@
 	</nav>
 </template>
 <script>
+//TODO: make work on screen sizes like mobile and hide mouse
 export default {};
 </script>
 <style scoped>
@@ -19,8 +20,7 @@ nav {
 	left: 0;
 	height: 100vh;
 	width: 100px;
-    background: rgb(40 40 40); /*double normal so it looks normal at start */
-    mix-blend-mode: difference;
+    background: rgb(30 30 60); /*double normal so it looks normal at start */
 	z-index: 98;
 }
 nav > div {
