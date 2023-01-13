@@ -62,6 +62,6 @@ export default {
 	top: var(--mouseY);
 	scale: 1;
 	rotate: 180deg;
-	transition: 700ms scale;
+	transition: 300ms scale;
 }
 </style>
