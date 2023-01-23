@@ -53,7 +53,7 @@ export default {
 	border-width: 0 12px 20.8px 12px;
 	border-color: transparent transparent var(--goldColor) transparent;
 	position: fixed;
-	z-index: 99;
+	z-index: 200;
 	pointer-events: none;
 	mix-blend-mode: difference;
 	transform-origin: 50% 65%;

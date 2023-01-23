@@ -1,5 +1,28 @@
 <template>
 	<section id="pageWrapper">
+		<svg
+			id="noise"
+			xmlns="http://www.w3.org/2000/svg"
+			xmlns:xlink="http://www.w3.org/1999/xlink"
+			width="100vw"
+			height="100vh"
+		>
+			<filter id="n" x="0" y="0">
+				<feTurbulence
+					type="fractalNoise"
+					baseFrequency="0.3"
+					stitchTiles="stitch"
+				/>
+			</filter>
+
+			<rect width="100vw" height="100vh" fill="#fff" />
+			<rect
+				width="100vw"
+				height="100vh"
+				filter="url(#n)"
+				opacity="0.95"
+			/>
+		</svg>
 		<router-view />
 	</section>
 </template>
@@ -13,15 +36,15 @@ export default {};
 }
 /*z-index: 99 -> mouse -> navbar -> title */
 :root {
-	--mainBg: rgb(20 20 20);
+	--mainBg: rgb(15, 15, 30);
 	--mainFontColor: rgb(235 235 235);
 	--subFontColor: rgb(200 200 200);
 	--smallTextColor: rgb(130 130 130);
 
-	--fixedElementsBg: rgb( 30 30 60);
+	--fixedElementsBg: rgb(30 30 60);
 
-	--goldColor:rgb(255, 213, 0);
-	--scaleMouse : 1;
+	--goldColor: rgb(255, 213, 0);
+	--scaleMouse: 1;
 
 	--mainFont: "Inter", sans-serif;
 	--titleFont: "Major Mono Display", monospace;
@@ -33,8 +56,16 @@ export default {};
 	background-color: var(--mainFontColor);
 	color: var(--mainBg);
 }
+#noise {
+	position: fixed;
+	z-index: 97;
+	top: 0;
+	left: 0;
+	opacity: 0.08;
+	pointer-events: none;
+}
 body {
-	background: var(--mainBg);
+	background: rgb(20 20 60);
 	display: absolute;
 	left: 0;
 	top: 0;

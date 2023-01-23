@@ -7,16 +7,25 @@
 			<header>
 				<topPage id="titleComp" />
 			</header>
-			<main>
-				<section class="subTitle content" style="font-size: 200px">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Recusandae numquam, vel obcaecati, nobis perspiciatis velit,
-					a distinctio dicta hic reprehenderit tempore. Ratione,
-					Loluptate! Quam ea nulla vitae fuga porro eaque!
+			<main id="content">
+				<div id="filler"></div>
+				<section id="starWarsIntro" class="visibleElements">
+					<starWars />
 				</section>
-				<section id="about" class="content">
-					show case with stuff like what I do why me what I have
-					learnt you top priority rates and how I do buisness
+				<section
+					id="about"
+					class="subTitle visibleElements"
+					style="width: 50px"
+				>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+					dolor a consequuntur voluptate perferendis sequi vitae, ex
+					perspiciatis quae tempore enim incidunt harum veniam
+					inventore exercitationem accusantium modi. Saepe, Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Ab dolor
+					a consequuntur voluptate perferendis sequi vitae, ex
+					perspiciatis quae tempore enim incidunt harum veniam
+					inventore exercitationem accusantium modi. Saepe, Lorem
+					ipsum dolor sit amet consectetur adipisicing elit. Ab dolor
 				</section>
 			</main>
 		</section>
@@ -26,44 +35,81 @@
 import mouse from "../components/mouse.vue";
 import topPage from "../components/topPage.vue";
 import navBar from "../components/navBar.vue";
+import starWars from "../components/starWars.vue";
 export default {
 	components: {
 		mouse,
 		topPage,
 		navBar,
+		starWars,
+	},
+	mounted() {
+		window.addEventListener("scroll", (event) => this.scrollBiz(event));
+		this.fillspacing();
+	},
+	unmounted() {
+		//document.removeEventListener(card.onmousemove);
+		window.removeEventListener("scroll", this.scrollBiz);
+	},
+	methods: {
+		scrollBiz(event) {
+			//so its finna diplay fixed until it passes the filler element then star wars goes
+		},
+		fillspacing() {
+			let firstDiv = document.querySelector("#filler");
+			let starWarsHeight = document.querySelector("#starWarsIntro");
+			firstDiv.style.height = `${starWarsHeight.clientHeight * 5.4}px`;
+		},
 	},
 };
 </script>
 <style>
-.content {
+#about {
+	position: relative;
+}
+
+#filler {
+	width: calc(100vw - 100px);
+}
+#starWarsIntro {
+	top: -8vw;
+	position: fixed;
+}
+
+#content {
+	margin-top: 16vw;
 	margin-left: 100px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 #titleComp {
 	z-index: 97;
 	padding-left: 120px;
 }
-
-/*styles in sections in assets / styles and imported in main.js */
-#indexWrapper > main {
-	padding-top: 20vw; /*in titles this is set to a max value*/
-}
-#spinnyA {
-	transform-origin: 50% 55%;
-}
-#spinnyV {
-	top: 2px;
-	transform-origin: 15% 50%; /*no clue why such an odd value */
-}
-.spinny {
-	color: var(--goldColor);
-	position: absolute;
-	transform: rotateZ(var(--scrollRotate));
-	font-size: 95%;
-}
-/*below 1000px */
 @media screen and (max-width: 1000px) {
-	#spinnyV {
-		top: 0.1vw;
+	#content {
+		margin-top: 15vw;
+	}
+}
+@media screen and (max-width: 500px) {
+	* {
+		cursor: default;
+	}
+	#mouse {
+		display: none;
+	}
+	.hover:hover {
+		cursor: pointer;
+	}
+	#titleComp {
+		padding-left: 5vw;
+	}
+	#content {
+		margin-left: 0px;
+	}
+	nav {
+		display: none;
 	}
 }
 </style>

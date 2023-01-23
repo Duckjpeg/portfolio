@@ -20,7 +20,7 @@ nav {
 	left: 0;
 	height: 100vh;
 	width: 100px;
-    background: rgb(30 30 60); /*double normal so it looks normal at start */
+	background: rgb(30 30 60);
 	z-index: 98;
 }
 nav > div {
@@ -31,7 +31,7 @@ nav > div {
 	rotate: -90deg;
 	left: 35%;
 	display: flex;
-	justify-content: space-around;
+	justify-self: space-evenly;
 }
 nav > div > a {
 	text-decoration: none;
@@ -41,10 +41,12 @@ nav > div > a {
 }
 nav > div > div {
 	position: relative;
-	top: 10px;
 	width: 10px;
 	height: 10px;
 	border-radius: 20px;
 	border: var(--goldColor) solid;
+}
+nav > div > * {
+	margin: auto;
 }
 </style>

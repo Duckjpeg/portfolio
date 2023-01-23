@@ -31,7 +31,7 @@ export default {
 	},
 	unmounted() {
 		//document.removeEventListener(card.onmousemove);
-		window.removeEventListener("mousemove", this.handleOnScroll);
+		window.removeEventListener("scroll", this.handleOnScroll);
 	},
 	methods: {
 		handleOnScroll(event) {
@@ -177,11 +177,15 @@ trial and error an look nice on screen but not in code*/
 	#indexWrapper > main {
 		padding-top: 220px;
 	}
+	#spinnyV {
+		top: 0.1vw;
+	}
 }
 @media screen and (max-width: 500px) {
 	.titleContainer {
-		height: 25vw; /*doesn't shrink since at that scale theres no point */
-		padding: 2vw 0 0 5vw;
+		height: 20vw; /*doesn't shrink since at that scale theres no point */
+		padding-top: 2vw;
+
 		/*lil bigger since nav now goes under*/
 	}
 	.slash {
@@ -209,6 +213,7 @@ trial and error an look nice on screen but not in code*/
 @media screen and (max-width: 300px) {
 	.titleContainer {
 		padding: 5px 0 0 5px;
+		height: 23vw;
 	}
 	.titleContainer .afterSlash {
 		position: relative;
@@ -218,5 +223,19 @@ trial and error an look nice on screen but not in code*/
 		position: relative;
 		top: -2vw;
 	}
+}
+
+#spinnyA {
+	transform-origin: 50% 55%;
+}
+#spinnyV {
+	top: 2px;
+	transform-origin: 15% 50%; /*no clue why such an odd value */
+}
+.spinny {
+	color: var(--goldColor);
+	position: absolute;
+	transform: rotateZ(var(--scrollRotate));
+	font-size: 95%;
 }
 </style>

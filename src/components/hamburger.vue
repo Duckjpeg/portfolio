@@ -1,5 +1,5 @@
 <template>
-	<div class="menuHam">
+	<div id="menuHam">
 		<input type="checkbox" />
 		<div class="bar" id="line1"></div>
 		<div class="bar" id="line2"></div>
@@ -8,13 +8,17 @@
 </template>
 <script></script>
 <style scoped>
+#menuHam {
+	z-index: 99;
+	position: fixed;
+	top: 0;
+}
 .bar {
-	width: 10vw;
-	height: 2vw;
+	width: calc(5vw - var(--scrollY) / 2.5);
+	height: calc(1vw - var(--scrollY) / 10);
 	border: 0.1vw var(--mainFontColor) solid;
 	background: rgb(20 20 20);
-	margin: 0.725vw; /*TODO: make work on screen sizes */
-	transform: skew(-20deg);
+	margin: calc(0.5vw - var(--scrollY) / 20); /*TODO: make work on screen sizes */
 }
 #line1 {
 	/*TODO: make so no animate on page load */
@@ -26,28 +30,22 @@
 #line3 {
 	animation: line-3-close 600ms forwards;
 }
-.menuHam > input {
+#menuHam > input {
 	cursor: none;
-	width: 10vw;
-	height: 8vw; /*need to adjust size on scroll*/
+	width: 5vw;
+	height: 4vw; /*need to adjust size on scroll*/
 	position: absolute;
 	opacity: 0;
 	z-index: 99;
 }
-.menuHam > input:checked ~ #line1 {
+#menuHam > input:checked ~ #line1 {
 	animation: line-1-open 600ms forwards;
 }
-.menuHam > input:checked ~ #line2 {
+#menuHam > input:checked ~ #line2 {
 	animation: line-2-open 600ms forwards;
 }
-.menuHam > input:checked ~ #line3 {
+#menuHam > input:checked ~ #line3 {
 	animation: line-3-open 600ms forwards;
-}
-.menuHam {
-	z-index: 98;
-	position: fixed;
-	top: 3.5vw;
-	right: 0;
 }
 @keyframes line-1-open {
 	15% {
