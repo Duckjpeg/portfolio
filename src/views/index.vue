@@ -45,11 +45,13 @@ export default {
 	},
 	mounted() {
 		window.addEventListener("scroll", (event) => this.scrollBiz(event));
+		window.addEventListener("resize", () => this.fillspacing());
 		this.fillspacing();
 	},
 	unmounted() {
 		//document.removeEventListener(card.onmousemove);
 		window.removeEventListener("scroll", this.scrollBiz);
+		window.removeEventListener("resize", () => this.fillspacing());
 	},
 	methods: {
 		scrollBiz(event) {
@@ -58,10 +60,7 @@ export default {
 		fillspacing() {
 			let firstDiv = document.querySelector("#filler");
 			let starWarsHeight = document.querySelector("#starWarsContentBody");
-			console.log(starWarsHeight.clientHeight);
 			firstDiv.style.height = `${starWarsHeight.clientHeight * 2}px`; //*2 since the scroll rate for star wars is 0.5
-			//TODO: make so content follows shortly after star wars exit
-			// also so it properly set up for screen sizes
 		},
 	},
 };

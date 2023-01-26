@@ -25,15 +25,13 @@
 <script>
 export default {
 	mounted() {
-		window.addEventListener("scroll", (event) =>
-			this.handleOnScrollStarWars(event)
-		);
+		window.addEventListener("scroll", () => this.handleOnScrollStarWars());
 	},
 	unmounted() {
 		window.removeEventListener("scroll", this.handleOnScrollStarWars);
 	},
 	methods: {
-		handleOnScrollStarWars(event) {
+		handleOnScrollStarWars() {
 			//mans finna set scrollY pt2
 			let scrollYStar = window.pageYOffset;
 			document.documentElement.style.setProperty(
@@ -58,7 +56,7 @@ export default {
 }
 #starWarsContentBody {
 	text-align: center;
-	font-size: 70px;
+	font-size: 8vw;
 	letter-spacing: 2px;
 	position: absolute;
 	top: 15vw;
