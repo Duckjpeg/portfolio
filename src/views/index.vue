@@ -57,8 +57,11 @@ export default {
 		},
 		fillspacing() {
 			let firstDiv = document.querySelector("#filler");
-			let starWarsHeight = document.querySelector("#starWarsIntro");
-			firstDiv.style.height = `${starWarsHeight.clientHeight * 5.4}px`;
+			let starWarsHeight = document.querySelector("#starWarsContentBody");
+			console.log(starWarsHeight.clientHeight);
+			firstDiv.style.height = `${starWarsHeight.clientHeight * 2}px`; //*2 since the scroll rate for star wars is 0.5
+			//TODO: make so content follows shortly after star wars exit
+			// also so it properly set up for screen sizes
 		},
 	},
 };

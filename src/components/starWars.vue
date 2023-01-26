@@ -48,7 +48,6 @@ export default {
 #starWarsWrapper {
 	width: calc(100vw - 100px); /*minus nav bar and its already shifted left*/
 	position: relative;
-	overflow: hidden;
 	height: 100vh;
 	transform: perspective(300px) rotateX(25deg);
 	transform-origin: 50% 70%;
@@ -62,7 +61,7 @@ export default {
 	font-size: 70px;
 	letter-spacing: 2px;
 	position: absolute;
-	top: 40%;
+	top: 15vw;
 	padding-bottom: 500px;
 }
 </style>

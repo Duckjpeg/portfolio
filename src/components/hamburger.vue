@@ -18,10 +18,9 @@
 	height: calc(1vw - var(--scrollY) / 10);
 	border: 0.1vw var(--mainFontColor) solid;
 	background: rgb(20 20 20);
-	margin: calc(0.5vw - var(--scrollY) / 20); /*TODO: make work on screen sizes */
+	margin: calc(0.5vw - var(--scrollY) / 20); 
 }
 #line1 {
-	/*TODO: make so no animate on page load */
 	animation: line-1-close 600ms forwards;
 }
 #line2 {
@@ -69,7 +68,7 @@
 		opacity: 0;
 	}
 	100% {
-		opacity: 0; /*TODO: make fade out and also make fade in smooother */
+		opacity: 0;
 	}
 }
 @keyframes line-3-open {
@@ -104,7 +103,7 @@
 }
 @keyframes line-2-close {
 	0% {
-		opacity: 0; /*TODO: make fade out and also make fade in smooother */
+		opacity: 0;
 	}
 	75% {
 		opacity: 0;
