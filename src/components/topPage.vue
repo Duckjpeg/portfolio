@@ -19,7 +19,7 @@ export default {
 			year: 2023,
 			navX: 0,
 			navY: 0,
-			scrollY: 0,
+			scrollYvw: 0,
 			pageHeight: 0,
 		};
 	},
@@ -60,28 +60,28 @@ export default {
 			); //subtract window height since page offset doesn't = full page height / when its at bottom
 			//should be 10vw ish
 			//if height => 22vw => 12vw
-			this.scrollY = window.pageYOffset / 5;
+			this.scrollYvw = window.pageYOffset / 5;
 			if (screen.width < 1000) {
-				if (this.scrollY * 0.143 <= 10) {
+				if (this.scrollYvw * 0.143 <= 10) {
 					document.documentElement.style.setProperty(
-						"--scrollY",
-						`${this.scrollY * 0.143}vw` //should roughly be 10vw (1/7 * 70 to get 10)
+						"--scrollYvw",
+						`${this.scrollYvw * 0.143}vw` //should roughly be 10vw (1/7 * 70 to get 10)
 					); //should be 10vw
 				} else {
 					document.documentElement.style.setProperty(
-						"--scrollY",
+						"--scrollYvw",
 						`${70 * 0.143}vw` //should roughly be 10vw (1/7 * 70 to get 10)
 					); //should be 10vw
 				}
 			} else {
-				if (this.scrollY <= 70) {
+				if (this.scrollYvw <= 70) {
 					document.documentElement.style.setProperty(
-						"--scrollY",
-						`${this.scrollY}px`
+						"--scrollYvw",
+						`${this.scrollYvw}px`
 					);
 				} else {
 					document.documentElement.style.setProperty(
-						"--scrollY",
+						"--scrollYvw",
 						`${70}px`
 					);
 				}
@@ -91,27 +91,27 @@ export default {
 };
 </script>
 <style>
-/*all var(--scrollY) / num, numberes were found through 
+/*all var(--scrollYvw) / num, numberes were found through 
 trial and error an look nice on screen but not in code*/
 
 /*below 1000 and above 500*/
 .mainTitle {
-	font-size: calc(10vw - var(--scrollY) / 5);
+	font-size: calc(10vw - var(--scrollYvw) / 5);
 }
 .surnameTitle {
 	font-family: var(--titleFont);
-	font-size: calc(2vw - var(--scrollY) / 200);
+	font-size: calc(2vw - var(--scrollYvw) / 200);
 	color: var(--smallTextColor);
 	position: relative;
 	left: 0.5vw;
-	top: calc(-4.5vw + var(--scrollY) / 10);
-	letter-spacing: calc(4.95vw - var(--scrollY) / 7.5);
+	top: calc(-4.5vw + var(--scrollYvw) / 10);
+	letter-spacing: calc(4.95vw - var(--scrollYvw) / 7.5);
 }
 .afterSlash {
 	font-family: var(--titleFont);
 	color: var(--mainFontColor);
 	position: relative;
-	font-size: calc(13vw - var(--scrollY) / 3);
+	font-size: calc(13vw - var(--scrollYvw) / 3);
 	top: 0.1vw;
 	left: 3vw;
 	bottom: 0.5vw;
@@ -127,12 +127,12 @@ trial and error an look nice on screen but not in code*/
 	left: 0;
 	width: 100vw;
 	width: 100dvw;
-	height: calc(16vw - var(--scrollY) / 2.8);
+	height: calc(16vw - var(--scrollYvw) / 2.8);
 	background: var(--fixedElementsBg);
 }
 .slash {
 	width: 0.6vw;
-	height: calc(15vw - var(--scrollY) / 2.5);
+	height: calc(15vw - var(--scrollYvw) / 2.5);
 	max-width: 10px;
 	max-height: 150px;
 	background: linear-gradient(
@@ -151,28 +151,28 @@ trial and error an look nice on screen but not in code*/
 /*above 1000px*/
 @media screen and (min-width: 1000px) {
 	.mainTitle {
-		font-size: calc(110px - var(--scrollY) * 0.9);
+		font-size: calc(110px - var(--scrollYvw) * 0.9);
 	}
 	.slash {
 		left: 15px;
-		height: calc(130px - var(--scrollY));
-		width: calc(10px - var(--scrollY) / 15);
+		height: calc(130px - var(--scrollYvw));
+		width: calc(10px - var(--scrollYvw) / 15);
 	}
 	.afterSlash {
 		position: relative;
 		left: 25px;
-		font-size: calc(130px - var(--scrollY));
+		font-size: calc(130px - var(--scrollYvw));
 		top: -6px;
 	}
 	.surnameTitle {
-		font-size: calc(25px - var(--scrollY) / 5);
+		font-size: calc(25px - var(--scrollYvw) / 5);
 		left: 5px;
-		top: calc(-25px + var(--scrollY) / 10);
-		letter-spacing: calc(52px - var(--scrollY) / 2.25);
+		top: calc(-25px + var(--scrollYvw) / 10);
+		letter-spacing: calc(52px - var(--scrollYvw) / 2.25);
 	}
 	.titleContainer {
 		padding: 20px 0 0 20px;
-		height: calc(160px - var(--scrollY) * 1.2);
+		height: calc(160px - var(--scrollYvwvw) * 1.2);
 	}
 	#indexWrapper > main {
 		padding-top: 220px;

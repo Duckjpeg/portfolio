@@ -8,6 +8,7 @@
 				<topPage id="titleComp" />
 			</header>
 			<main id="content">
+				<div id="welcomemsg">Hello</div>
 				<div id="filler"></div>
 				<section id="starWarsIntro" class="visibleElements">
 					<starWars />
@@ -55,12 +56,18 @@ export default {
 	},
 	methods: {
 		scrollBiz(event) {
-			//so its finna diplay fixed until it passes the filler element then star wars goes
+			//basically timelining
+			let scrollHeight = window.pageYOffset;
+			if (scrollHeight > 400) {
+				document.querySelector("#welcomemsg").style.display = "none";
+			} else {
+				document.querySelector("#welcomemsg").style.display = "block";
+			}
 		},
 		fillspacing() {
 			let firstDiv = document.querySelector("#filler");
 			let starWarsHeight = document.querySelector("#starWarsContentBody");
-			firstDiv.style.height = `${starWarsHeight.clientHeight * 2}px`; //*2 since the scroll rate for star wars is 0.5
+			firstDiv.style.height = `${starWarsHeight.clientHeight}px`;
 		},
 	},
 };
@@ -69,6 +76,14 @@ export default {
 #about {
 	position: relative;
 }
+/*TODO: maybe add a lil something fly around on scroll */
+
+#welcomemsg {
+	font-size: 200px;
+	color: yellow;
+	position: fixed;
+	scale: calc(1 - (var(--scrollYnoUnit) / 200) + 1);
+} /*make reactive (size biz) and make it look neat maybe different font for each letter */
 
 #filler {
 	width: calc(100vw - 100px);
