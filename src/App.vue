@@ -48,9 +48,11 @@ export default {};
 
 	--mainFont: "Inter", sans-serif;
 	--titleFont: "Major Mono Display", monospace;
+	--cursiveFont: "Pacifico", cursive;
 
 	--scrollY: 0px;
-	--scroll: 0px;
+	--scrollYvw: 0px;
+	--scrollYnoUnit: 0;
 }
 ::selection {
 	background-color: var(--mainFontColor);

@@ -2,7 +2,7 @@
 	<div id="starWarsWrapper">
 		<div id="board">
 			<div id="starWarsContentBody">
-				HELLO !
+				AND WELCOME TO MY PORTFOLIO
 				<br />
 				<br />
 				elit. Quae eius magnam laudantium necessitatibus, assumenda
@@ -69,7 +69,9 @@ export default {
 	font-size: 5vw;
 	letter-spacing: 2px;
 	position: absolute;
-	top: 80vw;
+	top: calc(
+		90vh + (400px) / 0.8063
+	); /*so Hello disappears when star wars shows up */
 	color: var(--goldColor);
 }
 

@@ -8,7 +8,7 @@
 				<topPage id="titleComp" />
 			</header>
 			<main id="content">
-				<div id="welcomemsg">Hello</div>
+				<div id="welcomemsg">Hello!</div>
 				<div id="filler"></div>
 				<section id="starWarsIntro" class="visibleElements">
 					<starWars />
@@ -78,10 +78,12 @@ export default {
 }
 /*TODO: maybe add a lil something fly around on scroll */
 
-#welcomemsg {
-	font-size: 200px;
-	color: yellow;
+main > #welcomemsg {
+	font-size: 10vw;
+	color: var(--goldColor);
 	position: fixed;
+	top: calc(45vh);
+	font-family: var(--cursiveFont);
 	scale: calc(1 - (var(--scrollYnoUnit) / 200) + 1);
 } /*make reactive (size biz) and make it look neat maybe different font for each letter */
 
