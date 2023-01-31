@@ -71,7 +71,6 @@ export default {
 		90vh + (400px) / 0.8
 	); /*so Hello disappears when star wars shows up */
 	color: var(--goldColor);
-	background-color: green;
 }
 
 /*above 1000px */
