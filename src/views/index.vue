@@ -65,10 +65,9 @@ export default {
 					document.querySelector("#titleComp").getBoundingClientRect().height * 2 <
 				window.pageYOffset
 			) {
-				console.log("cheese");
 				document.querySelector("#starWarsIntro").style.opacity = 0;
 			} else {
-				document.querySelector("#starWarsIntro").style.dispopacitylay = 1;
+				document.querySelector("#starWarsIntro").style.opacity = 1;
 			}
 		},
 		fillspacing() {
