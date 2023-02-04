@@ -16,11 +16,9 @@
 					</section>
 				</div>
 				<div id="mainBody">
-					<section id="about" class="subTitle visibleElements" style="width: 50px">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolor a consequuntur voluptate perferendis sequi vitae, ex perspiciatis quae
-						tempore enim incidunt harum veniam inventore exercitationem accusantium modi. Saepe, Lorem ipsum dolor sit amet consectetur adipisicing
-						elit. Ab dolor a consequuntur voluptate perferendis sequi vitae, ex perspiciatis quae tempore enim incidunt harum veniam inventore
-						exercitationem accusantium modi. Saepe, Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab dolor
+					<section id="about" class="subTitle visibleElements"></section>
+					<section id="contact" class="subTitle visibleElements">
+						<contact />
 					</section>
 				</div>
 			</main>
@@ -32,12 +30,14 @@ import mouse from "../components/mouse.vue";
 import topPage from "../components/topPage.vue";
 import navBar from "../components/navBar.vue";
 import starWars from "../components/starWars.vue";
+import contact from "../components/contact.vue";
 export default {
 	components: {
 		mouse,
 		topPage,
 		navBar,
 		starWars,
+		contact,
 	},
 	mounted() {
 		window.addEventListener("scroll", (event) => this.scrollBiz(event));
@@ -58,7 +58,6 @@ export default {
 			} else {
 				document.querySelector("#welcomemsg").style.display = "block";
 			}
-			console.log(document.querySelector("#titleComp").getBoundingClientRect().height);
 			if (
 				parseInt(document.querySelector("#filler").style.height) +
 					document.querySelector("#filler").offsetTop -
@@ -127,6 +126,10 @@ main #welcomemsg {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+}
+#contact {
+	display: flex;
+	justify-content: center;
 }
 #titleComp {
 	z-index: 97;

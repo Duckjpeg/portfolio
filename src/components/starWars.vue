@@ -2,21 +2,23 @@
 	<div id="starWarsWrapper">
 		<div id="board">
 			<div id="starWarsContentBody">
-				AND WELCOME TO MY PORTFOLIO
+				AND WELCOME TO MY PORTFOLIO <span id="slashPersonal">/ personal website</span>
 				<br />
 				<br />
-				elit. Quae eius magnam laudantium necessitatibus, assumenda
-				blanditiis, nulla odit laboriosam doloremque, at et dicta ullam
-				enim unde! Quos temporibus quibusdam quae pariatur! Lorem ipsum
-				dolor sit amet, consectetur adipisicing elit. Harum ducimus
+				As you can probably guess by the title my name is Harry.
 				<br />
 				<br />
 				<br />
+				I am currently doing four A-Levels <br />
+				Maths <br />Further Maths<br />
+				Physics <br />Chemistry
 				<br />
 				<br />
-				totam inventore quisquam, cupiditate iure quas non perspiciatis
-				aut animi maxime odit ullam ea rem magni nobis obcaecati ad
-				placeat.
+				<br />
+				And I am teaching myself website develtopment.
+				<br />So far I have learnt how to make functional, eye catching (depending on who you ask) websites like
+				the one you're on now
+				<br />
 			</div>
 		</div>
 	</div>
@@ -33,14 +35,8 @@ export default {
 		handleOnScrollStarWars() {
 			//mans finna set scrollY pt2
 			let scrollY = window.pageYOffset;
-			document.documentElement.style.setProperty(
-				"--scrollYpx",
-				`${scrollY}px`
-			);
-			document.documentElement.style.setProperty(
-				"--scrollYnoUnit",
-				`${scrollY}`
-			);
+			document.documentElement.style.setProperty("--scrollYpx", `${scrollY}px`);
+			document.documentElement.style.setProperty("--scrollYnoUnit", `${scrollY}`);
 		},
 	},
 };
@@ -55,9 +51,12 @@ export default {
 }
 #board {
 	position: relative;
-	top: calc(
-		(var(--scrollYpx) / -0.8)
-	); /*TODO: also make font sizes better for mobile and make so it scrolls off at same rate*/
+	top: calc((var(--scrollYpx) / -0.8)); /*TODO: also make font sizes better for mobile and make so it scrolls off at same rate*/
+}
+#slashPersonal {
+	font-size: 1vw;
+	position: relative;
+	bottom: 0.5vw;
 }
 
 #starWarsContentBody {
@@ -67,9 +66,7 @@ export default {
 	font-size: 5vw;
 	letter-spacing: 2px;
 	position: absolute;
-	top: calc(
-		90vh + (400px) / 0.8
-	); /*so Hello disappears when star wars shows up */
+	top: calc(90vh + (400px) / 0.8); /*so Hello disappears when star wars shows up */
 	color: var(--goldColor);
 }
 
@@ -77,6 +74,10 @@ export default {
 @media screen and (min-width: 1000px) {
 	#starWarsContentBody {
 		font-size: 50px;
+	}
+	#slashPersonal {
+		font-size: 20px;
+		bottom: 10px;
 	}
 }
 /*mobile */
