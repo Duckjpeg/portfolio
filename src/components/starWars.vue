@@ -42,12 +42,11 @@ export default {
 </script>
 <style>
 #starWarsWrapper {
-	width: 60vw; /*TODO: make text like a block*/
+	width: 40vw; /*TODO: make text like a block*/
 	position: relative;
 	height: 100vh;
 	transform: perspective(200px) rotateX(25deg);
 	transform-origin: 50% 70%;
-	top: -22vh;
 }
 #board {
 	position: relative;
@@ -85,6 +84,7 @@ export default {
 	#starWarsWrapper {
 		width: calc(100vw - 100px);
 		transform: perspective(200px) rotateX(25deg);
+		top: -22vh;
 	}
 	#starWarsContentBody {
 		top: calc(90vh + (400px) / 0.7);
