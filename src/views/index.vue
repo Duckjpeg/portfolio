@@ -20,6 +20,7 @@
 					<section id="contact" class="subTitle visibleElements">
 						<contact />
 					</section>
+					<div class="cheese" style="width:50px;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates quam cumque at quo ipsum necessitatibus laboriosam earum error tempora, molestias ut laborum alias distinctio voluptate odit, voluptatibus magni quaerat voluptas!</div>
 				</div>
 			</main>
 		</section>
@@ -155,11 +156,14 @@ main #welcomemsg {
 	#titleComp {
 		padding-left: 5vw;
 	}
-	#content {
-		margin-left: 0px;
-	}
 	nav {
 		display: none;
+	}
+	#intro {
+		margin-left: 0px;
+	}
+	#mainBody {
+		left: 0;
 	}
 }
 </style>

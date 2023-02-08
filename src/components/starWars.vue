@@ -16,8 +16,7 @@
 				<br />
 				<br />
 				And I am teaching myself website develtopment.
-				<br />So far I have learnt how to make functional, eye catching (depending on who you ask) websites like
-				the one you're on now
+				<br />So far I have learnt how to make functional, eye catching (depending on who you ask) websites like the one you're on now
 				<br />
 			</div>
 		</div>
@@ -43,15 +42,16 @@ export default {
 </script>
 <style>
 #starWarsWrapper {
-	width: 40vw; /*TODO: make text like a block*/
+	width: 60vw; /*TODO: make text like a block*/
 	position: relative;
 	height: 100vh;
 	transform: perspective(200px) rotateX(25deg);
 	transform-origin: 50% 70%;
+	top: -22vh;
 }
 #board {
 	position: relative;
-	top: calc((var(--scrollYpx) / -0.8)); /*TODO: also make font sizes better for mobile and make so it scrolls off at same rate*/
+	top: calc((var(--scrollYpx) / -0.8));
 }
 #slashPersonal {
 	font-size: 1vw;
@@ -84,10 +84,14 @@ export default {
 @media screen and (max-width: 500px) {
 	#starWarsWrapper {
 		width: calc(100vw - 100px);
-		transform: perspective(600px) rotateX(25deg);
+		transform: perspective(200px) rotateX(25deg);
 	}
 	#starWarsContentBody {
 		top: calc(90vh + (400px) / 0.7);
+	}
+	#slashPersonal {
+		font-size: 15px;
+		bottom: 3px;
 	}
 }
 </style>
