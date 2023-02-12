@@ -49,4 +49,35 @@ nav > div > div {
 nav > div > * {
 	margin: auto;
 }
+
+@media screen and (max-width: 500px) {
+	nav {
+		width: 100vw;
+		height: 10vw;
+		display: flex;
+		align-items: center;
+		top: 20vw;
+		background: rgb(40 40 70);
+	}
+	nav > div {
+		width: 100vw;
+		flex-direction: row-reverse;
+		translate: 0 0;
+		rotate: 0deg;
+		left: 0;
+	}
+	nav > div > a {
+		font-size: 4vw;
+	}
+	nav > div > div {
+		width: 2vw;
+		height: 2vw;
+		border-radius: 4vw;
+	}
+}
+@media screen and (max-width: 300px) {
+	nav {
+		top: 23vw;
+	}
+}
 </style>

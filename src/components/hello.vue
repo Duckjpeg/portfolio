@@ -39,7 +39,8 @@ export default {
 	color: var(--goldColor);
 	position: fixed;
 	top: 50vh;
-	left: calc(50vw - 100px);
+	left: calc((100vw - 100px) / 2 + 100px);
+	translate: -50% 0;
 	font-family: var(--cursiveFont);
 	scale: calc(1 - (var(--scrollYnoUnit) / var(--veiwPortHeight)) * 4 + 1); /*at 50vh down its 0.5% so times 4 = 2 == initial scale  */
 } /*make reactive (size biz) and make it look neat maybe different font for each letter */

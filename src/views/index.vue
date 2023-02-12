@@ -13,6 +13,9 @@
 				</div>
 				<div id="mainBody">
 					<section id="about" class="subTitle visibleElements"></section>
+					<section id="welcome">
+						and Welcome to my portfolio
+					</section>
 					<section id="contact" class="subTitle visibleElements">
 						<contact />
 					</section>
@@ -92,9 +95,6 @@ export default {
 @media screen and (max-width: 500px) {
 	#titleComp {
 		padding-left: 5vw;
-	}
-	nav {
-		display: none;
 	}
 	#intro {
 		margin-left: 0px;

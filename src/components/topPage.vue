@@ -1,15 +1,11 @@
 <template>
 	<div class="titleContainer">
 		<div class="titleWrapper">
-			<span class="mainTitle mainTitleTemplate"
-				>H<span class="spinny" id="spinnyA">A</span> RRy</span
-			>
+			<span class="mainTitle mainTitleTemplate">H<span class="spinny" id="spinnyA">A</span> RRy</span>
 			<div class="slash"></div>
 			<span class="afterSlash">{{ year }}</span>
 		</div>
-		<span class="surnameTitle"
-			>ste<span class="spinny" id="spinnyV">V</span> en</span
-		>
+		<span class="surnameTitle">ste<span class="spinny" id="spinnyV">V</span> en</span>
 	</div>
 </template>
 <script>
@@ -25,9 +21,7 @@ export default {
 	},
 	mounted() {
 		this.year = new Date().getFullYear();
-		window.addEventListener("scroll", (event) =>
-			this.handleOnScroll(event)
-		);
+		window.addEventListener("scroll", (event) => this.handleOnScroll(event));
 	},
 	unmounted() {
 		//document.removeEventListener(card.onmousemove);
@@ -41,22 +35,12 @@ export default {
 			if (typeof document.height !== "undefined") {
 				this.pageHeight = document.height; // For webkit browsers
 			} else {
-				this.pageHeight = Math.max(
-					B.scrollHeight,
-					B.offsetHeight,
-					H.clientHeight,
-					H.scrollHeight,
-					H.offsetHeight
-				);
+				this.pageHeight = Math.max(B.scrollHeight, B.offsetHeight, H.clientHeight, H.scrollHeight, H.offsetHeight);
 			}
 			//in here because it change if screen width changes
 			document.documentElement.style.setProperty(
 				"--scrollRotate",
-				`${
-					(window.pageYOffset /
-						(this.pageHeight - window.innerHeight)) *
-					720
-				}deg` // gets a % of page height and rotates cursor to percent through page
+				`${(window.pageYOffset / (this.pageHeight - window.innerHeight)) * 720}deg` // gets a % of page height and rotates cursor to percent through page
 			); //subtract window height since page offset doesn't = full page height / when its at bottom
 			//should be 10vw ish
 			//if height => 22vw => 12vw
@@ -75,15 +59,9 @@ export default {
 				}
 			} else {
 				if (this.scrollYvw <= 70) {
-					document.documentElement.style.setProperty(
-						"--scrollYvw",
-						`${this.scrollYvw}px`
-					);
+					document.documentElement.style.setProperty("--scrollYvw", `${this.scrollYvw}px`);
 				} else {
-					document.documentElement.style.setProperty(
-						"--scrollYvw",
-						`${70}px`
-					);
+					document.documentElement.style.setProperty("--scrollYvw", `${70}px`);
 				}
 			}
 		},
@@ -135,14 +113,7 @@ trial and error an look nice on screen but not in code*/
 	height: calc(15vw - var(--scrollYvw) / 2.5);
 	max-width: 10px;
 	max-height: 150px;
-	background: linear-gradient(
-		180deg,
-		rgba(20 20 20 /0),
-		rgb(235 235 235 /0.8),
-		rgba(235 235 235 /1),
-		rgb(235 235 235 /0.8),
-		rgba(20 20 20 /0)
-	);
+	background: linear-gradient(180deg, rgba(20 20 20 /0), rgb(235 235 235 /0.8), rgba(235 235 235 /1), rgb(235 235 235 /0.8), rgba(20 20 20 /0));
 	position: relative;
 	left: 2vw;
 	transform: skew(-30deg);
@@ -221,7 +192,7 @@ trial and error an look nice on screen but not in code*/
 	}
 	.surnameTitle {
 		position: relative;
-		top: -2vw;
+		top: -3vw;
 	}
 }
 
@@ -229,7 +200,7 @@ trial and error an look nice on screen but not in code*/
 	transform-origin: 50% 55%;
 }
 #spinnyV {
-	top: 2px;
+	top: 1px;
 	transform-origin: 15% 50%; /*no clue why such an odd value */
 }
 .spinny {
