@@ -154,7 +154,7 @@ trial and error an look nice on screen but not in code*/
 }
 @media screen and (max-width: 500px) {
 	.titleContainer {
-		height: 20vw; /*doesn't shrink since at that scale theres no point */
+		height: 21vw; /*doesn't shrink since at that scale theres no point */
 		padding-top: 2vw;
 
 		/*lil bigger since nav now goes under*/
@@ -184,7 +184,7 @@ trial and error an look nice on screen but not in code*/
 @media screen and (max-width: 300px) {
 	.titleContainer {
 		padding: 5px 0 0 5px;
-		height: 23vw;
+		height: 24vw;
 	}
 	.titleContainer .afterSlash {
 		position: relative;

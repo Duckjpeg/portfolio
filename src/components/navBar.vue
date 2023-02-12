@@ -77,7 +77,7 @@ nav > div > * {
 }
 @media screen and (max-width: 300px) {
 	nav {
-		top: 23vw;
+		top: 24vw;
 	}
 }
 </style>
