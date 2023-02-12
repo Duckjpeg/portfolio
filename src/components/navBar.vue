@@ -56,7 +56,7 @@ nav > div > * {
 		height: 10vw;
 		display: flex;
 		align-items: center;
-		top: 20vw;
+		top: 22vw;
 		background: rgb(40 40 70);
 	}
 	nav > div {
@@ -72,12 +72,13 @@ nav > div > * {
 	nav > div > div {
 		width: 2vw;
 		height: 2vw;
-		border-radius: 4vw;
+		border-radius: 2vw;
+		border-width: 0.75vw;
 	}
 }
 @media screen and (max-width: 300px) {
 	nav {
-		top: 24vw;
+		top: 23vw;
 	}
 }
 </style>

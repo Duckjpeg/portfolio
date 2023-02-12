@@ -183,8 +183,8 @@ trial and error an look nice on screen but not in code*/
 /*for really small width screens */
 @media screen and (max-width: 300px) {
 	.titleContainer {
-		padding: 5px 0 0 5px;
-		height: 24vw;
+		padding: .5vw 0 0 .5vw;
+		height: 23vw;
 	}
 	.titleContainer .afterSlash {
 		position: relative;
@@ -192,9 +192,13 @@ trial and error an look nice on screen but not in code*/
 	}
 	.surnameTitle {
 		position: relative;
-		top: -3vw;
+		top: -3.5vw;
+	}
+	#spinnyV{
+		top:-1px;
 	}
 }
+
 
 #spinnyA {
 	transform-origin: 50% 55%;
