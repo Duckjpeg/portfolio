@@ -68,7 +68,7 @@ export default {
 	},
 };
 </script>
-<style>
+<style scoped>
 /*all var(--scrollYvw) / num, numberes were found through 
 trial and error an look nice on screen but not in code*/
 

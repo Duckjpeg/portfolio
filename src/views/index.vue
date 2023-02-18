@@ -12,11 +12,12 @@
 					<hello />
 				</div>
 				<div id="mainBody">
-					<section id="about" class="subTitle visibleElements"></section>
-					<section id="welcome">
-						and Welcome to my portfolio
+					<section id="welcome">and welcome to my website</section>
+					<section id="about" class="visibleElements">
+						<lightsaber />
+						<about />
 					</section>
-					<section id="contact" class="subTitle visibleElements">
+					<section id="contact" class="subTitle">
 						<contact />
 					</section>
 					<div class="cheese" style="width: 50px">
@@ -34,6 +35,8 @@ import topPage from "../components/topPage.vue";
 import navBar from "../components/navBar.vue";
 import contact from "../components/contact.vue";
 import hello from "../components/hello.vue";
+import about from "../components/about.vue";
+import lightsaber from "../components/lightsaber.vue";
 export default {
 	components: {
 		mouse,
@@ -41,6 +44,8 @@ export default {
 		navBar,
 		contact,
 		hello,
+		about,
+		lightsaber,
 	},
 	mounted() {},
 	unmounted() {},
@@ -48,18 +53,18 @@ export default {
 };
 </script>
 <style>
+#welcome {
+	font-family: var(--titleFont);
+	color: var(--goldColor);
+	font-size: 4vw;
+	display: flex;
+	position: relative;
+	justify-content: center;
+	/*TODO:make it work on all screen sizes and NEON GLOW WITH SOME SORT OF ANIMATION*/
+}
 #about {
-	position: relative;
+	scroll-margin-top: 18vw;
 }
-/*TODO: maybe add a lil something fly around on scroll */
-
-#mainBody {
-	position: relative;
-	left: 100px;
-	width: calc(100vw - 100px);
-	z-index: 20;
-}
-
 #intro {
 	z-index: 5;
 	margin-top: 16vw;
@@ -76,9 +81,20 @@ export default {
 	z-index: 97;
 	padding-left: 120px;
 }
-@media screen and (max-width: 1000px) {
-	#content {
-		margin-top: 15vw;
+/*TODO: maybe add a lil something fly around on scroll */
+#mainBody {
+	position: relative;
+	left: 100px;
+	width: calc(100% - 100px);
+	z-index: 20;
+}
+
+@media screen and (min-width: 1000px) {
+	#welcome {
+		font-size: 40px;
+	}
+	#about {
+		scroll-margin-top: 180px;
 	}
 }
 @media screen and (max-width: 800px) {
@@ -101,6 +117,13 @@ export default {
 	}
 	#mainBody {
 		left: 0;
+	}
+	#welcome {
+		width: 100vw;
+	}
+	#about {
+		width: 100vw;
+		scroll-margin-top: 35vw;
 	}
 }
 </style>

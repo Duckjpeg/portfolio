@@ -52,7 +52,7 @@ nav > div > * {
 
 @media screen and (max-width: 500px) {
 	nav {
-		width: 100vw;
+		width: 110vw;
 		height: 10vw;
 		display: flex;
 		align-items: center;

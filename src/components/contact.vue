@@ -7,7 +7,7 @@
 		</section>
 	</div>
 </template>
-<style>
+<style scoped>
 #contactWrapper {
 	display: flex;
 	flex-direction: column;

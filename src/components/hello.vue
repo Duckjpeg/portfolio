@@ -25,10 +25,7 @@ export default {
 			} else {
 				document.querySelector("#welcomemsg").style.display = "block";
 			}
-			document.documentElement.style.setProperty(
-				"--scrollYnoUnit",
-				`${scrollHeight}` //should roughly be 10vw (1/7 * 70 to get 10)
-			);
+			document.documentElement.style.setProperty("--scrollYnoUnit", `${scrollHeight}`);
 		},
 	},
 };

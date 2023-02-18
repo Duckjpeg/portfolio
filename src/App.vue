@@ -1,27 +1,11 @@
 <template>
 	<section id="pageWrapper">
-		<svg
-			id="noise"
-			xmlns="http://www.w3.org/2000/svg"
-			xmlns:xlink="http://www.w3.org/1999/xlink"
-			width="100vw"
-			height="100vh"
-		>
+		<svg id="noise" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100vw" height="100vh">
 			<filter id="n" x="0" y="0">
-				<feTurbulence
-					type="fractalNoise"
-					baseFrequency="0.3"
-					stitchTiles="stitch"
-				/>
+				<feTurbulence type="fractalNoise" baseFrequency="0.4" stitchTiles="stitch" />
 			</filter>
 
-			<rect width="100vw" height="100vh" fill="#fff" />
-			<rect
-				width="100vw"
-				height="100vh"
-				filter="url(#n)"
-				opacity="0.95"
-			/>
+			<rect width="10000px" height="100vh" filter="url(#n)" opacity="0.9" />
 		</svg>
 		<router-view />
 	</section>
@@ -61,6 +45,8 @@ export default {};
 #noise {
 	position: fixed;
 	z-index: 97;
+	width: 110vw;
+	height: 110vh;
 	top: 0;
 	left: 0;
 	opacity: 0.08;
@@ -72,7 +58,7 @@ body {
 	left: 0;
 	top: 0;
 }
-#pageWrapper {
+html {
 	overflow-x: hidden;
 }
 body #mouse {
@@ -88,7 +74,7 @@ body:hover #mouse {
 .subTitle {
 	font-family: "Inter", sans-serif;
 	font-weight: 700; /*weights - 700, 100, 300*/
-	color: var(--subFontColor);
+	color: var(--goldColor);
 }
 .info {
 	font-family: "Inter", sans-serif;
