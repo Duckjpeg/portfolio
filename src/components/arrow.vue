@@ -19,17 +19,16 @@ export default {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin: 5vw;
 }
 .arrowWrapper span {
 	display: block;
-	width: 1.5vw;
-	height: 1.5vw;
-	border-bottom: 5px solid var(--goldColor);
-	border-right: 5px solid var(--goldColor);
+	width: 4vw;
+	height: 4vw;
+	border-bottom: .5vw solid var(--goldColor);
+	border-right: .5vw solid var(--goldColor);
 	transform: rotate(45deg);
-	margin: -1vw;
-	animation: animate 8s infinite;
+	margin: -5px;
+	animation: animate 5s infinite cubic-bezier(.54,1.19,.74,.88);
 }
 
 .arrowWrapper span:nth-child(2) {
@@ -56,14 +55,14 @@ export default {
 @media screen and (min-width: 1000px) {
 	.arrowWrapper span {
 		display: block;
-		width: 15px;
-		height: 15px;
+		width: 40px;
+		height: 40px;
 		border-bottom: 5px solid var(--goldColor);
 		border-right: 5px solid var(--goldColor);
 		margin: -10px;
 	}
 	.arrowWrapper {
-		margin: 50px;
+		margin-top: 0px;
 	}
 }
 @media screen and (max-width: 500px) {
@@ -71,8 +70,8 @@ export default {
 		display: block;
 		width: 5vw;
 		height: 5vw;
-		border-bottom: 1.5vw solid var(--goldColor);
-		border-right: 1.5vw solid var(--goldColor);
+		border-bottom: 1vw solid var(--goldColor);
+		border-right: 1vw solid var(--goldColor);
 		margin: -5vw;
 	}
 	.arrowWrapper {
