@@ -8,7 +8,18 @@
 			<br />
 			<arrow />
 		</div>
-		<div id="aboutContent">Hi as you can probably guess from the title my name is Harry</div>
+		<div id="aboutContent">
+			<span>
+				As you can probably guess from the title my name is Harry <br /><br />
+				I am currently in my first year of studying for my A-levels.<br />For my A-levels I am currently studying:<br />Further-Maths <br />Maths
+				<br />Physics <br />Chemistry. <br /><br />
+				In my free time I am learning and constantly improving my skills in web devolpment and also developing my knowledge and abilities with
+				programming embedded systems such as the raspberry pi pico.
+				<br />
+				<br />
+				I also about a year ago began learning astrophotography</span
+			>
+		</div>
 	</div>
 </template>
 <script>
@@ -38,9 +49,17 @@ export default {
 #aboutContent {
 	font-family: var(--mainFont);
 	color: var(--goldColor);
-	text-align: center;
-	font-size: 2vw;
+	text-align: left;
+	font-size: 4vw;
 	margin-bottom: 80vw;
+	padding: 4vw;
+}
+#aboutContent span {
+	background: rgba(15, 15, 30, 0.64);
+}
+
+#aboutContent > img {
+	width: 100%;
 }
 @media screen and (min-width: 1000px) {
 	#aboutTitle {

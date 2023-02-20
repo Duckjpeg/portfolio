@@ -30,7 +30,7 @@ export default {};
 	--goldColor: rgb(255, 213, 0);
 	--scaleMouse: 1;
 
-	--mainFont: "Inter", sans-serif;
+	--mainFont: sans-serif;
 	--titleFont: "Major Mono Display", monospace;
 	--cursiveFont: "Pacifico", cursive;
 

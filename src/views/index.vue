@@ -20,10 +20,6 @@
 					<section id="contact" class="subTitle">
 						<contact />
 					</section>
-					<div class="cheese" style="width: 50px">
-						Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptates quam cumque at quo ipsum necessitatibus laboriosam earum error
-						tempora, molestias ut laborum alias distinctio voluptate odit, voluptatibus magni quaerat voluptas!
-					</div>
 				</div>
 			</main>
 		</section>
@@ -94,7 +90,7 @@ export default {
 		font-size: 40px;
 	}
 	#about {
-		scroll-margin-top: 180px;
+		scroll-margin-top: 150px;
 	}
 }
 @media screen and (max-width: 800px) {
