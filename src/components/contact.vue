@@ -32,6 +32,7 @@
 	font-size: 3vw;
 	font-weight: 300;
 	font-family: var(--titleFont);
+	overflow-x: hidden;
 }
 #contactWrapper > section {
 	white-space: nowrap;
