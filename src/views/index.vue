@@ -33,6 +33,7 @@ import contact from "../components/contact.vue";
 import hello from "../components/hello.vue";
 import about from "../components/about.vue";
 import lightsaber from "../components/lightsaber.vue";
+import arrow from "../components/arrow.vue";
 export default {
 	components: {
 		mouse,
@@ -42,6 +43,7 @@ export default {
 		hello,
 		about,
 		lightsaber,
+		arrow,
 	},
 	mounted() {},
 	unmounted() {},
@@ -71,7 +73,7 @@ export default {
 }
 #contact {
 	display: flex;
-	width:100%;
+	width: 100%;
 	justify-content: center;
 }
 #titleComp {
