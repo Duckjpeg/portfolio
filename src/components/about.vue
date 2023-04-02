@@ -9,16 +9,23 @@
 			<arrow />
 		</div>
 		<div id="aboutContent">
+			<div class="animatedBackground"></div>
 			<span>
-				As you can probably guess from the title my name is Harry <br /><br />
-				I am currently in my first year of studying for my A-levels.<br />For my A-levels I am currently studying:<br />Further-Maths <br />Maths
-				<br />Physics <br />Chemistry. <br /><br />
-				In my free time I am learning and constantly improving my skills in web devolpment and also developing my knowledge and abilities with
-				programming embedded systems such as the raspberry pi pico.
-				<br />
-				<br />
-				I also about a year ago began learning astrophotography</span
-			>
+				I am currently studying for my A-levels doing Further Maths, Physics and Chemistry.<br /><br />
+				In my free time, I've been teaching myself web development through online courses and tutorials. <br /><br />This has allowed me to gain a deep
+				understanding of programming languages, such as HTML, CSS, and JavaScript, as well as popular frameworks like Vuejs and express js and mongoDB.
+				<br /><br />Learning web development has honed my problem-solving skills, attention to detail, and ability to work independently.<br /><br /><br /><br /><br /><br />
+				Why me?<br /><br />
+				I can help you create a custom website that showcases your brand and helps you connect with your customers.<br /><br />
+				As a solo website developer, I'll work closely with you to understand your business and create a website that meets your unique needs. If you
+				need a simple website to showcase your services or a website that stands out from the rest.<br /><br />
+				My goal is to create a website that reflects your brand and helps you reach your business goals. I use the latest web design technologies to
+				ensure that your website is fast, responsive, and optimized for search engines. And because I'm a solo developer, you'll get personalized
+				attention and quick turnaround times.<br /><br />
+				I believe in delivering high-quality websites that are both beautiful and functional. That's why I offer competitive pricing and flexible
+				payment options based on the features and functions of your website, so you can get a website that fits your budget. And if you need ongoing
+				maintenance or support, I'm here to help you every step of the way.
+			</span>
 		</div>
 	</div>
 </template>
@@ -54,8 +61,8 @@ export default {
 	margin-bottom: 80vw;
 	padding: 4vw;
 }
+
 #aboutContent span {
-	background: rgba(15, 15, 30, 0.64);
 }
 
 #aboutContent > img {

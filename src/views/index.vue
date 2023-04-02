@@ -71,6 +71,7 @@ export default {
 }
 #contact {
 	display: flex;
+	width:100%;
 	justify-content: center;
 }
 #titleComp {
@@ -120,6 +121,9 @@ export default {
 	#about {
 		width: 100vw;
 		scroll-margin-top: 35vw;
+	}
+	#contact {
+		width: 100vw;
 	}
 }
 </style>
