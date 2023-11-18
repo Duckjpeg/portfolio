@@ -37,7 +37,11 @@
 #contactWrapper > section {
 	white-space: nowrap;
 	position: relative;
+	animation-play-state: running;
 	animation: treadmil 3s infinite linear;
+}
+#contactWrapper > section:hover {
+	animation-play-state: paused;
 }
 @keyframes treadmil {
 	0% {
