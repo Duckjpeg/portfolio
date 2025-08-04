@@ -11,20 +11,9 @@
 		<div id="aboutContent">
 			<div class="animatedBackground"></div>
 			<span>
-				I am currently studying for my A-levels doing Further Maths, Physics and Chemistry.<br /><br />
-				In my free time, I've been teaching myself web development through online courses and tutorials. <br /><br />This has allowed me to gain a deep
-				understanding of programming languages, such as HTML, CSS, and JavaScript, as well as popular frameworks like Vuejs and express js and mongoDB.
-				<br /><br />Learning web development has honed my problem-solving skills, attention to detail, and ability to work independently.<br /><br /><br /><br /><br /><br />
-				Why me?<br /><br />
-				I can help you create a custom website that showcases your brand and helps you connect with your customers.<br /><br />
-				As a solo website developer, I'll work closely with you to understand your business and create a website that meets your unique needs. If you
-				need a simple website to showcase your services or a website that stands out from the rest.<br /><br />
-				My goal is to create a website that reflects your brand and helps you reach your business goals. I use the latest web design technologies to
-				ensure that your website is fast, responsive, and optimized for search engines. And because I'm a solo developer, you'll get personalized
-				attention and quick turnaround times.<br /><br />
-				I believe in delivering high-quality websites that are both beautiful and functional. That's why I offer competitive pricing and flexible
-				payment options based on the features and functions of your website, so you can get a website that fits your budget. And if you need ongoing
-				maintenance or support, I'm here to help you every step of the way.
+				Me is at university of cambridge yeah <br />
+				and I made this website when I was like 16 and forgot how to do all of this but I have managed to remeber
+				how to edit the text
 			</span>
 			<br />
 			<br />
